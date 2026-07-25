@@ -1,4 +1,4 @@
-# 🫧 AURA — Liquid Purity
+# 🫧 HYDR8 — Liquid Purity
 
 > A premium, editorial-grade water bottle e-commerce web application built with React, Tailwind CSS v4, Three.js, and WebGL.
 
@@ -20,7 +20,7 @@
 
 ## 🌊 About the Project
 
-**AURA** is a high-end, luxury water bottle brand experience built as a fully responsive single-page application. It combines immersive WebGL shaders, Three.js 3D particle systems, and editorial-quality design to create a premium digital storefront that feels like a magazine come to life.
+**HYDR8** is a high-end, luxury water bottle brand experience built as a fully responsive single-page application. It combines immersive WebGL shaders, Three.js 3D particle systems, and editorial-quality design to create a premium digital storefront that feels like a magazine come to life.
 
 Every page features:
 - **Interactive WebGL backgrounds** with mouse-reactive liquid shader effects
