@@ -107,7 +107,7 @@ const Landing = () => {
           <img
             alt="Aura Luxury Bottle"
             className="h-[70%] sm:h-full object-contain transform-gpu hover:scale-105 transition-transform duration-1000 ease-out"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9nLBKsl-c19E6tRq1NQnmcNa3YgQF8DL7syD2RftPkoxWX0pbktY2fZxwncnal-o0nI3vmZ8cidBJEgNtgk3dhmyax-tNtJqWSB7gNl3J93gtjBSYT2YJgVAXinapkRGlEDe6fCavWlCZOel6qBm8kzuVdYzc5jFdbd78cWkj7TNO4Vf3lf_HBDzbwqqgDGYLPQlOzogvnyasqnVLz90V0-8G6W21P8Egdt6UBrhZAQkXO0w5jAX"
+            src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80"
           />
         </div>
 

@@ -324,7 +324,7 @@ const Checkout = () => {
                 <h3 className="font-headline-lg text-headline-lg mb-8">Summary Sculpture</h3>
                 <div className="relative h-80 w-full bg-black/5 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 group cursor-crosshair overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"></div>
-                  <img alt="Suspended Aura Bottle" className="h-[80%] object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+                  <img alt="Suspended Aura Bottle" className="h-[80%] object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80"/>
                   <div className="absolute bottom-4 left-4 font-label-sm text-xs opacity-40 uppercase tracking-tighter">Responsive Interactive Preview</div>
                 </div>
                 <div className="space-y-4 border-b border-white/30 pb-6 mb-6">

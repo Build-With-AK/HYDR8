@@ -220,7 +220,7 @@ const AboutUs = () => {
             <img 
               className="w-full h-auto drop-shadow-2xl reveal-up" 
               style={{ transition: 'transform 0.1s ease-out', transitionDelay: '0.2s', transform: bottleTransform }}
-              src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU" 
+              src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80" 
               alt="Aura Bottle"
             />
           </div>
@@ -241,7 +241,7 @@ const AboutUs = () => {
           <div className="relative w-full aspect-[4/5] glass-frost rounded-xl overflow-hidden reveal-up">
             <div 
               className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-80" 
-              style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBojiepRzkNpaRFpnVZkNThVqKcndRME7hVT0XQ0hVgYeT1z1EF7cdkKnBH2fvx15C3rJBePuTyCUr7uH0-UPvPqxC6UoFlwBLUcR1X9RqW9yE1Wg7x6FwWpmx_LuTsnPt6YHIDEuE6frQ6LVUHVtndDOyj_rXBh-phgde4rlhswa4IJzluAyHxyj01Ju_vLWPb9bbpIcLYbcnP1sheKkwqORk1716lI1kFXR_xb114SplsRGbxWFzH')" }}
+              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509909756405-be0199881695?w=1200&q=80')" }}
             ></div>
             <div className="absolute inset-0 flex items-center justify-center p-20">
               <div className="text-center">
@@ -300,17 +300,17 @@ const AboutUs = () => {
         <div className="relative h-[800px] flex items-center justify-center">
           <div className="relative w-full max-w-lg">
             <div className="absolute left-1/2 -translate-x-1/2 -top-40 reveal-up" style={{ transitionDelay: '0.1s' }}>
-              <img className="w-32 h-auto opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ZphSncVNOj3ENodjhBlfDn0FAmcMmlCCCyOefW0i4WJSSELflnZhp9beFPxdJkRCZwhohXAm34Dk2Ztz3kFB6YsZCtyz6ULVkYhYfUfpbHXebIWVyjm1rpSylfirjQjfucGkcntqAO-EJKpbLG_7oQjJZNo3DlKR8JbkLlA3EP5xoELUwNBV7EZT5HwtMmaxlfoADmSy_j3eJH5jTLhN9QJ0FRlf_qvp-iCwfLVpe1qNYAGE1kMv" alt="Precision Seal"/>
+              <img className="w-32 h-auto opacity-80" src="https://images.unsplash.com/photo-1548872591-3bb2ee9d5293?w=200&q=80" alt="Precision Seal"/>
               <div className="absolute left-40 top-1/2 w-48 h-px bg-white/20"></div>
               <div className="absolute left-96 top-1/2 -translate-y-1/2 font-label-sm uppercase whitespace-nowrap">Precision Seal</div>
             </div>
             <div className="absolute left-1/2 -translate-x-1/2 top-0 reveal-up" style={{ transitionDelay: '0.3s' }}>
-              <img className="w-48 h-auto opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7cixzv7tAanKZ1rYdPBhOohaVx0OIbCQ8TuGf4V7Gw-pOgyNe9na0AXhoTX7HrDXo8DeEqiOdIOP1fgj3ltPFtRuCTQ5ZPi1kXbXJaSLxv_w9kDA9JfdbPfqEo9EdiKu4TDQy2ck0QVKl3laiqZT9sEfkwg_nuYVTitr7jmoxa0PowpfTImWrgWGRYDbhc2zYh4cfsnVWKU90SGk-YClC0WFBYGaZ6jpJlI8KG-w7UnXgXm33efpJ" alt="Borosilicate Core"/>
+              <img className="w-48 h-auto opacity-90" src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=300&q=80" alt="Borosilicate Core"/>
               <div className="absolute right-56 top-1/2 w-48 h-px bg-white/20"></div>
               <div className="absolute right-[440px] top-1/2 -translate-y-1/2 font-label-sm uppercase whitespace-nowrap text-right">Borosilicate Core</div>
             </div>
             <div className="absolute left-1/2 -translate-x-1/2 top-60 reveal-up" style={{ transitionDelay: '0.5s' }}>
-              <img className="w-64 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_-HltDGr3fBRWFeZA7mST60DWFZmBN8K47asj8JGJvlB38bXsyAQ-I4Iz1ecE2njr12Bo5nblUeNqrrEksuJH7NcKjtGzPpbzzCvFx1tUdhNksml1-Sc_vwzx8SqUxiLtlMsqrv1vbJYC0q1uf_51XeNMAXfbORlds72fXPtxz_CCzKMsm9iP0kIBzcP8jrVKf0MU4FiTviGSYENwvet8tXcPf6tOszhp75lAcZ4AHhV4VO5hYpgq" alt="Titanium Shield"/>
+              <img className="w-64 h-auto" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&q=80" alt="Titanium Shield"/>
               <div className="absolute left-72 bottom-20 w-48 h-px bg-white/20"></div>
               <div className="absolute left-[540px] bottom-20 -translate-y-1/2 font-label-sm uppercase whitespace-nowrap">Titanium Shield</div>
             </div>
@@ -361,7 +361,7 @@ const AboutUs = () => {
         <div className="relative z-10 text-center space-y-16 reveal-up">
           <h2 className="font-display-xl text-display-xl-mobile sm:text-[64px] md:text-display-xl">Carry the Future.</h2>
           <div className="relative w-72 md:w-96 mx-auto">
-            <img className="w-full h-auto drop-shadow-[0_50px_80px_rgba(0,0,0,0.1)] hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw" alt="Aura Collection"/>
+            <img className="w-full h-auto drop-shadow-[0_50px_80px_rgba(0,0,0,0.1)] hover:scale-110 transition-transform duration-1000" src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=600&q=80" alt="Aura Collection"/>
           </div>
           <a 
             className="inline-block bg-primary text-on-primary px-16 py-6 rounded-full font-label-sm uppercase tracking-widest hover:scale-105 hover:shadow-2xl transition-all duration-300" 

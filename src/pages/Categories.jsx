@@ -242,7 +242,7 @@ const Categories = () => {
             </h1>
           </div>
           <div className="relative w-full max-w-[500px] aspect-[0.67] z-10 transition-transform" id="hero-bottle-container" ref={heroBottleRef} onMouseMove={handleMagneticHover} onMouseLeave={handleMagneticLeave}>
-            <img alt="AURA Noir" className="w-full h-full object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU" />
+            <img alt="AURA Noir" className="w-full h-full object-contain drop-shadow-2xl" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=700&q=80" />
           </div>
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40">
             <span className="font-label-sm uppercase tracking-widest">Scroll to Explore</span>
@@ -308,7 +308,7 @@ const Categories = () => {
                 <img
                   alt="Silicone Detail 1"
                   className="w-full h-full object-contain opacity-40"
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLsdxuQC4wqLgO9kruobx4o66N9M8uQe6btGbTqvOXVEkjZrwd1Tim2Xc7XhoLJy43pB6aWEDHq95Pr5lJO0t__KkjBmK7-0uKVBbGeD24IVOpaZPjXNkQXDEU0lmf-PWGqVpRukFGECzRuP8Mu5Ym0XJ1yQqADwIZLR2GRVixLGPReUmPeGL4edz2d2Q8078ZCY_N2IWIVz9nPnVx_iDnSCTB99yPwEw0En0Zvwe1W8FiFYyCj6QeprTps"
+                  src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=300&q=80"
                 />
               </div>
               <div
@@ -318,7 +318,7 @@ const Categories = () => {
                 <img
                   alt="Silicone Detail 2"
                   className="w-full h-full object-contain opacity-60"
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLsdxuQC4wqLgO9kruobx4o66N9M8uQe6btGbTqvOXVEkjZrwd1Tim2Xc7XhoLJy43pB6aWEDHq95Pr5lJO0t__KkjBmK7-0uKVBbGeD24IVOpaZPjXNkQXDEU0lmf-PWGqVpRukFGECzRuP8Mu5Ym0XJ1yQqADwIZLR2GRVixLGPReUmPeGL4edz2d2Q8078ZCY_N2IWIVz9nPnVx_iDnSCTB99yPwEw0En0Zvwe1W8FiFYyCj6QeprTps"
+                  src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&q=80"
                 />
               </div>
             </div>
@@ -370,7 +370,7 @@ const Categories = () => {
                 <div className="w-[500px] h-[500px] border border-secondary/20 rounded-full animate-pulse"></div>
               </div>
               <div className="absolute top-10 right-20 w-28 h-28 categories-orbit-mini">
-                <img alt="Mini" className="w-full h-full object-contain opacity-30" src="https://lh3.googleusercontent.com/aida/AP1WRLvxRDSfleZlCo9X5DemLMclfVtCTsm5t_ZQ4410juc9ZoYe3tY6Q7eCq3WJesI69B9Pw3A9xgDQMGYGrysp0-OEQDqBfgRnqbb-7oFwHmUmjCvenLouo4PUXRBsDICe7lSV516l8qFyELQwvGP0u8gISgF5x8vCLdv5yALi11i49C5IoqxVTzHcPtY2MZFnX2j6h7jezUeOc3wJxunIIRGFwl-l86spWjQG_PK9WOZr70514sMO5pumSA" />
+                <img alt="Mini" className="w-full h-full object-contain opacity-30" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80" />
               </div>
             </div>
           </div>
@@ -380,7 +380,7 @@ const Categories = () => {
         <section className="w-full flex items-center justify-center py-40 relative px-margin-mobile md:px-margin-desktop" data-color="arctic-mist" id="travel">
           <div className="max-w-container-max w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
             <div className="md:col-span-7 relative h-[600px] md:h-[800px] flex items-center justify-center">
-              <img alt="Travel Collection" className="h-4/5 object-contain z-10" src="https://lh3.googleusercontent.com/aida/AP1WRLvZwRdSlR_ft58wALPM9z9rd1cFzj84viYAt-00QB4gtlbQz5D8f-8MFT6A0EDHyoYJz2P1zp1z8kBawpONFUjohZFCuGC22ADwYI5CEbxBup--VNL4PsfBKLe44EoSrwrHrmL418YTy2-3kCMDUF-R9_OeqVo1FvtQ-oONo6bnZYzIkEkDrqiVpwUKCcWMHIzoY511WDxmDYueY4NC46ruvuvUuXDBOI07DNLJJLVV2n0RfJmsr53ykHI" />
+              <img alt="Travel Collection" className="h-4/5 object-contain z-10" src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=700&q=80" />
               <div className="absolute top-1/4 left-1/4 w-48 h-48 categories-orbit-mini opacity-20 blur-xl bg-secondary-container rounded-full"></div>
             </div>
             <div className="md:col-span-5 flex flex-col gap-8">

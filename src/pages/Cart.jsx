@@ -223,7 +223,7 @@ const Cart = () => {
               <img 
                 alt="Hydr8 Noir Bottle" 
                 className="w-72 md:w-[450px] drop-shadow-[0_80px_100px_rgba(0,0,0,0.15)] filter saturate-[0.8] contrast-[1.1]" 
-                src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80"
               />
               <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-48 h-8 bg-black/10 blur-2xl rounded-full"></div>
             </div>
@@ -238,7 +238,7 @@ const Cart = () => {
               onMouseLeave={handleMagneticLeave}
             >
               <div className="w-full md:w-1/2">
-                <img alt="Hydr8 Noir" className="w-full h-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+                <img alt="Hydr8 Noir" className="w-full h-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80"/>
               </div>
               <div className="w-full md:w-1/2 space-y-8">
                 <div className="space-y-2">
@@ -314,7 +314,7 @@ const Cart = () => {
               onMouseLeave={handleMagneticLeave}
             >
               <div className="w-full md:w-1/2">
-                <img alt="AURA Crystal" className="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLsdxuQC4wqLgO9kruobx4o66N9M8uQe6btGbTqvOXVEkjZrwd1Tim2Xc7XhoLJy43pB6aWEDHq95Pr5lJO0t__KkjBmK7-0uKVBbGeD24IVOpaZPjXNkQXDEU0lmf-PWGqVpRukFGECzRuP8Mu5Ym0XJ1yQqADwIZLR2GRVixLGPReUmPeGL4edz2d2Q8078ZCY_N2IWIVz9nPnVx_iDnSCTB99yPwEw0En0Zvwe1W8FiFYyCj6QeprTps"/>
+                <img alt="AURA Crystal" className="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600&q=80"/>
               </div>
               <div className="w-full md:w-1/2 space-y-8">
                 <div className="space-y-2">
@@ -351,7 +351,7 @@ const Cart = () => {
               onMouseLeave={handleMagneticLeave}
             >
               <div className="h-64 flex items-center justify-center">
-                <img alt="AURA Aqua" className="h-full w-auto drop-shadow-xl" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+                <img alt="AURA Aqua" className="h-full w-auto drop-shadow-xl" src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=500&q=80"/>
               </div>
               <div className="w-full text-center space-y-4">
                 <h3 className="font-headline-lg text-headline-lg text-primary">Hydr8 Frost</h3>

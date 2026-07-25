@@ -23,7 +23,7 @@ const injectStyles = () => {
 
     /* Noise overlay */
     .wcu-noise {
-      background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCihnrUJCZFbhRSop7cxcHbUugFjXMxQDtBzO1Zq0VRwLpnW0t1cgtiq0TuHoSup9ei3KWXRukxyLYz_EkLO70_nQVpQfnb5gQ1gqCFY7NAzVb7CF9Ky9xFgeYNS6hH9DO0DCW01Uh6NJQwzey0FgSt86BNpbvlv41hAHDjyTnIZOj6QHUgq9Qn4L6VpMTs9OPnx_-FPkp9TFPTqaSEgE1co1zWEu-Ncs5jCR4tG1L4PbOly_lBDEB3);
+      background-image: url(https://grainy-gradients.vercel.app/noise.svg);
       opacity: 0.03;
       pointer-events: none;
       position: absolute;
@@ -372,7 +372,7 @@ const WhyChooseUs = () => {
                 >
                   <img
                     className="wcu-gs"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnNSHLfbh9xyxHzTCDY0wITLeu1m2Z9cmlVAj5xuLb_ECpveK4zhaIsOJxxtJS23XVuoA198WFFVS2vQc83PnBx4KlI1SGg9ZKJ3k0wNgAxSeAN8Fapm1SWnHY8QYbUcAMrf3sQWY_Put2rMRY4n0iqkGf7Pr1tPwLRK4_BM33H_7B-bgt4TKGJkPia3YqS4GLprlWJTUtXx-L5KrOvsVfo7NDdB-utp0k0NB-9zTY3Oh6DdyzzbFQ"
+                    src="https://images.unsplash.com/photo-1548872591-3bb2ee9d5293?w=800&q=80"
                     alt="Macro close-up of AURA bottle cap with water droplets"
                   />
                 </div>
@@ -537,7 +537,7 @@ const WhyChooseUs = () => {
           >
             <div className="wcu-prod-glow" aria-hidden="true" />
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC04FoyAd233YNR5WUZoPdDuBVk0vTLakfiNzwBGpP_-hhOU6ftySYJ_M2Vvj7QCMT3JeWY9AkO6D8Cl7nqfkqTtpC6xOJpGvtCIOKc4DiIk9Aj9o155DWY4Y6qELfAFbKQOh1hNmevfIdgWUrQ0VgTlUVXHEr6Ru7Pt1-1gHjoAgHitVlL3HDrBjcF_42FB2VFb8fk9uO3s7v4cRciaErfs-95ETE58UCRmVWYX0S2RnpilnQsLSJv"
+              src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80"
               alt="AURA bottle floating with glass spheres and water droplets"
               style={{
                 position: 'relative', zIndex: 2,

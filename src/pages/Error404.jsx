@@ -175,7 +175,7 @@ const Error404 = () => {
               <img 
                 id="aura-bottle" 
                 className="w-full h-full object-contain error404-float drop-shadow-2xl" 
-                src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU" 
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80" 
                 alt="Aura Bottle"
               />
             </div>

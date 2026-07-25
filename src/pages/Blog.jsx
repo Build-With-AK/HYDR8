@@ -224,7 +224,7 @@ const Blog = () => {
             </div>
             <div className="md:col-span-4 relative flex justify-center">
               <div className="blog-animate-float relative">
-                <img alt="Flagship Aura Bottle" className="w-full max-w-[400px] object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+                <img alt="Flagship Aura Bottle" className="w-full max-w-[400px] object-contain drop-shadow-2xl" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80"/>
                 <div className="absolute -top-10 -right-10 w-24 h-24 glass-frost rounded-full blog-animate-float" style={{ animationDelay: '-2s' }}></div>
                 <div className="absolute bottom-20 -left-16 w-12 h-12 border-2 border-primary/20 rounded-full blog-animate-float" style={{ animationDelay: '-4s' }}></div>
               </div>
@@ -245,7 +245,7 @@ const Blog = () => {
 
         {/* Featured Story */}
         <section className="min-h-[80vh] flex items-center bg-white relative overflow-hidden group">
-          <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFLnI91xmVwVfD6f-vJQ1kkGDLlWFbvW25dlPDJPrAK5xcj9RfAS0_9Bumm3eiUFkyo9E_P10QT4nwHYiSfeyH1sZwAfx-EQtq2KKQj-uviQ61fAYPgqnDunLiAZeneZT01AGC9JbY0xale2mPgQk29WaSp2UVGR0JED5CD0dLxIA0Pjl8Rbq2OTyiyAJvNUVgdg7jFZFw_6dMUncWAOPyNoWXi8quY8L2pes4x7G9KGjN0AdatNor')" }}></div>
+          <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&q=80')" }}></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-white flex flex-col gap-8 w-full">
             <div className="flex items-center gap-6">
@@ -268,7 +268,7 @@ const Blog = () => {
             {/* Story 1 */}
             <article className="md:col-span-7 group cursor-pointer relative" data-aos="fade-up">
               <div className="relative overflow-hidden aspect-[4/5] md:aspect-[16/10] mb-12">
-                <img alt="Stainless Steel Anatomy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+                <img alt="Stainless Steel Anatomy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=900&q=80"/>
                 <div className="absolute top-8 left-8 glass-frost p-8 max-w-xs transition-all duration-500 group-hover:translate-x-2 group-hover:-translate-y-2">
                   <span className="font-label-sm text-label-sm text-primary mb-4 block uppercase tracking-widest">Material Study</span>
                   <h3 className="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6">Benefits of Stainless Steel Bottles</h3>
@@ -289,7 +289,7 @@ const Blog = () => {
                 </div>
               </div>
               <div className="mt-8 overflow-hidden aspect-square">
-                <div className="w-full h-full bg-surface-container-high transition-transform duration-1000 group-hover:scale-110" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDUOtDmGvLWbt_-sEabL3OCYljswjs06Zbs5C7006uYDAmo9adxsOhY9UMBxlxnwBBLZpg8kJtL6u0EkmTQZiNytpAj2r85li7o6vaF-oOXF5SVRm4mch-zGffKRbxsF6DXxk_duGStCdjTf1z03V0co_-QLECI-_4d2VSFF9jnXpPajmYqN6C8xFhrSRRt9K0MykEwXVTEi3bu1nJA6VfCB-WPw4gFkDQjCyjy1NP0ZWpupGqEadB')", backgroundSize: 'cover' }}></div>
+                <div className="w-full h-full bg-surface-container-high transition-transform duration-1000 group-hover:scale-110" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1621972750749-0fbb1abb7736?w=800&q=80')", backgroundSize: 'cover' }}></div>
               </div>
             </article>
 
@@ -308,7 +308,7 @@ const Blog = () => {
                   </div>
                 </div>
                 <div className="relative min-h-[400px] overflow-hidden">
-                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8kIvVjBpp5VQm3YFWPc0mSEVcrTeYsx3HJ5LbYMrj08UKewd1vBsH0EiY3-RWBoRUZfrB4RLDwdtjOjjuPq9n7QzCBhX1XH1SmwQiBGbhFUdiEJXzHeG_r8pmjrS-TK_ibiWksf4j7T_8aV6jd37sRPdzjYbWNpUQF3n2Onr2LD5BUZOcmH4Fm6ht5X-BoXHDblBVDZljri_lBPKNneJXMW7uFIu0hYRZYy05XLf1i9nXmojUdqx5')" }}></div>
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80')" }}></div>
                 </div>
               </div>
             </article>
@@ -328,7 +328,7 @@ const Blog = () => {
             </div>
             <div className="hidden lg:block relative group">
               <div className="absolute -inset-10 glass-frost rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <img alt="Aura Bottle" className="w-64 rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+              <img alt="Aura Bottle" className="w-64 rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&q=80"/>
             </div>
           </div>
         </section>

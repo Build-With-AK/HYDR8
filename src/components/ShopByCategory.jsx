@@ -143,7 +143,7 @@ const ShopByCategory = () => {
                 <img 
                   className="w-full h-full object-contain parallax-layer" 
                   alt="A premium matte charcoal stainless steel water bottle floating gracefully against a clean white studio background. The lighting is soft and high-key, highlighting the smooth texture of the metal. Crystal clear water droplets and glass spheres orbit the bottle in a frozen-motion splash effect, creating a sense of liquid purity and high-end industrial design." 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7blyTVYPEZ640fC-IJejEmFj7v8GAoVObveulM2qRK5YE6yNjXs3wog-3nFV06JMhzLCwxtJevtx8joPs-4jrRD1kJzfMir6-3yavMLFX3sQiC68XaPkTxesdU2tnQ1KiSyyQWp4p09-P9Rcob5oZGBhBryXrVywyZx5n74k8YEvkl1aOTuFcuzNK6guwGkJ8ETZLQO66N6Y-SWgXJ1j3DfPqM4xamDBBZmQNbhsOBryEd075P2OW" 
+                  src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80" 
                   style={{transform: 'translateZ(50px)'}}
                 />
                 <div className="absolute top-1/4 -right-10 w-24 h-24 glass-card rounded-full flex items-center justify-center animate-pulse">
@@ -170,7 +170,7 @@ const ShopByCategory = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <img 
                 className="w-4/5 h-4/5 object-contain floating-element" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmj1mv--lqaag6hF2J0Va3Tv_sK-1GIMyOr5Ay0ziNtesCdkSbGL0GRRCBaXQdr1Fi61ImBqFQ_36h5EBix-By126--3kC34RHEE7p66d8qHXO2rut1Cr9ZoOD_nb8mmx96-DCafLgQvpQ8aoTffVyw99cCN6zVluWumGey1LYrNsReGBgUyvKTa9Cuk9sNHI0ItRzskBSlY0KpxjLYj-6L2xpmOnz0nQqOKmcCyeq3X294I3uomXR" 
+                src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&q=80" 
                 style={{animationDelay: '-2s'}}
               />
               {/* Decorative liquid ribbon */}
@@ -194,7 +194,7 @@ const ShopByCategory = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <img 
                 className="w-3/4 h-3/4 object-contain floating-element" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYqewqUzsAdMl5YGwtR3byEKVR7FkwRrW1CpKDK-kJmhoFfX3w53-glTsmDtneeVxy2vaTAvVp5p3_tfoYjQRRZKdpbHNeqTT7ciQYj-MqMKCDfblOsKyTHZobogmPco-ohYnkhn34ClneZ1q05-P6OKjRk6-bqO8hOpGjigbR6q78UTtYXYvkZ72p3NOOzC1TUBakYZUS2pGfQeNeq1LfntlT_3VfS9RwHTgJ36JerEmPRBjvXsqX" 
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" 
                 style={{animationDelay: '-1s'}}
               />
             </div>
@@ -210,7 +210,7 @@ const ShopByCategory = () => {
             <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
               <img 
                 className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 opacity-80" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhgMbm8O6CXxcKIdWxg1YpvFyae3bUosaQAD5OUK7dMYYOGLh6w07AmHxpdZncUQyIFPjlvg8ENk6QAzboarIJUpxdMEuAPhVyNZcY-D2pYSn--VF6HHitar5T0FL-0GnvYCgT5Xd6tOX0YKX9EJUxngfwkip2a3hR0Nz0ffgXHBr5RKuu3nkMBYdaD6lwvJPRhbRjYL63gzio58_irGuuzIv2dMMfj-Pv-_ld-cmmkxSNN3kJCoDG"
+                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent"></div>
             </div>
@@ -245,7 +245,7 @@ const ShopByCategory = () => {
               <div className="relative h-full flex items-center justify-center">
                 <img 
                   className="h-[120%] object-contain floating-element relative z-10" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuClRh_ID8M3e5UWci4V3niEjtvRtm9R6EoRTDnzHv8vHxIqBMbSokmR3ZryLfl6jagYxFso1JpmehTE0rCfcq8H5KGyM2Saie_wBJ_GkRZl3NI-GVQ2YBfHYkwHQ7G2cGbCYS4U1lzwiX7iJfSpj1O49fcDok7TKZf-Nj3gU0Z4azP6dhBlY7JdgOb7ceqwrpDlfl2sHtcmYvt8WpMhD6hAK_glLl_HyvoVD5O2vvv-CJjtJvtmunAl"
+                  src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80"
                 />
                 {/* Glowing glow background */}
                 <div className="absolute inset-0 bg-secondary-container/20 blur-[100px] rounded-full scale-75 animate-pulse"></div>
@@ -265,7 +265,7 @@ const ShopByCategory = () => {
               <img 
                 className="w-2/3 h-2/3 object-contain floating-element" 
                 alt="A sleek, lightweight travel water bottle with a built-in carabiner and a minimalist carry-handle. The bottle has a soft-touch texture in a serene sage green color. It is shown floating alongside abstract topographic map lines and a light-mode architectural aesthetic, emphasizing movement and journey." 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABy5sxie9f2UhPSUiXT0olMirkABuhCsH1i7ChpPI8c76lUb1riSN0Q0dIx16yx1o8Ox9IPjFUZestiYyJPR4NSjk5C66vEoOLuR6gsVEIhzBfeeBd1svoEbRjpAojddzvsH8f5fgKW2uvoZJSqHRbd5N6qCVnsXLox7-y8TB_sCxx4peUMGjb2XoFEaNVjhIc5LlJi09S90oKnzh0bGbX2A_340vCovYzG7WbrerOgtHTzOahR-mj"
+                src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=500&q=80"
               />
             </div>
           </div>
@@ -281,7 +281,7 @@ const ShopByCategory = () => {
               <img 
                 className="w-2/3 h-2/3 object-contain floating-element" 
                 alt="A playful yet sophisticated kid-sized water bottle in a soft pastel coral shade. The design is durable and leak-proof, featuring a simple silicone straw cap. The bottle is surrounded by floating glass spheres of varying sizes in a bright, clean, minimalist white-themed studio setting that feels friendly but premium." 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj9TVaam8zHLFGlegzpVogkftzMCQD9V78elVD7IW7k0TphauZWQQFIdnrZmPMYoZW_Uu94Z6kFyGF98KyRV9TDrW8gYWVipSQDdX4npbq5EeTFnocWMOIdbULuiad15WcEiAfAaJYSGR19v_M2iFTLm6P41dasj0MUVyHmPSIgGlI1sT-gCrjjwcZiHowd1vzZY6qKi9Qsgj866GaTR0n2tXcRQB_jobNzIWrGWcu7yJzkMAQur7Y"
+                src="https://images.unsplash.com/photo-1610824352934-c10d87b700cc?w=500&q=80"
                 style={{animationDelay: '-3s'}}
               />
             </div>

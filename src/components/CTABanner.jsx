@@ -63,7 +63,7 @@ const CTABanner = () => {
                         ref={bottleRef}
                         className="w-full h-auto object-contain floating-bottle drop-shadow-[0_35px_60px_-15px_rgba(0,0,0,0.1)] transition-transform duration-1000 group-hover:scale-105"
                         alt="A hyper-realistic 3D render of a matte charcoal AURA hydration bottle"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWRD5XlgyFcBtbRkK3DM-jxvcBNnjA4ZLHop_rV5UVzSvgc8YouCGmb8U5bQqcKwjtvZ1bDVMCJPb_GaWP7WMUN5hHWgi5eiyKToWatdgdXHsJ8j0NsAuo1Z7tK01tqRLUnEepW7RLMvhVD7H4V-5tkOZUlBdGEmRgbO85JOhvFNIvezQQJ0itEVhqP_zzjdvp0AlicVJB_D61U7r8-y6nuM_lPohTI0Jjf3_q-yketj1_caICRfvv"
+                        src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=800&q=80"
                     />
                 </div>
                 <div ref={revealRef} className="max-w-4xl space-y-8" id="reveal-content">

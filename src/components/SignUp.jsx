@@ -66,7 +66,7 @@ const SignUp = () => {
                                 <img
                                     className="w-full drop-shadow-2xl"
                                     alt="A high-end, minimalist matte black AURA water bottle floating in a white studio environment. The lighting is cinematic, highlighting the bottle's elegant curves and its premium brushed metal cap. Soft water droplets cling to the surface of the bottle, creating a feeling of freshness and technological precision in line with a high-luxury wellness brand."
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDfdyx9WG8UN6xaNAKN5PeR9m6hkVC_d6qK1ejgZ1EmA_p7Pscjc-oWoUOCqJyI1XvXq1gBIit4xQ8S7XdcaqObwp4WOjCJWN6bohcXW40QDhqRzdDiMp1q1qyZKycQl2wYefHglYZx52aqnE4SQpXCvAuZO5PgRFu5OtryTrjDyztbjtg9khNblOD8fVtIxcc3CqPWrYxWzB_z5DBeSYmmYqkRDC-665bn0ZWdUEgUFqqcEZiyQj"
+                                    src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80"
                                 />
                             </div>
                             {/* Decorative Glass Glow */}

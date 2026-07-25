@@ -264,8 +264,7 @@ const ContactUs = () => {
             <div className="relative w-64 h-96 mx-auto group">
               <img 
                 className="w-full h-full object-contain contact-floating-sculpture transition-all duration-700 group-hover:scale-110 drop-shadow-2xl" 
-                src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"
-                alt="Aura Bottle"
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80"
               />
               <div className="absolute inset-0 bg-secondary/10 blur-[80px] -z-10 rounded-full opacity-30"></div>
             </div>
@@ -450,7 +449,7 @@ const ContactUs = () => {
                   <div className="w-full h-full bg-surface-dim rounded-2xl grayscale transition-all duration-700 group-hover:grayscale-0 relative overflow-hidden">
                     <div 
                       className="w-full h-full bg-cover bg-center" 
-                      style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5Ipbqb44QA0hipK3MQ2d5cyyCZwGMxMW4pEmiBek_P1Q44De_wQBgo2eGYde4aWa2qAtx1Ggvcnpz0Gep1X9l4SeTIVznYwmpOiQt2bPYiRREhAhuZ0jRkJOoZ8Ui4PZNL45x3Rug52Tm_-ZRUtRkSm2o1ECE0nsuND6G5Yk67GBDHbsxwMmGw02FhxoG57HR6m5Bx0xx9uc11MkGlgU9OgaNA3TTaT9nfuq5HsyOugsKkPsbpQtU')" }}
+                      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1485217988980-11786ced9454?w=1000&q=80')" }}
                     ></div>
                     <div className="absolute inset-0 bg-secondary/5 mix-blend-overlay"></div>
                   </div>

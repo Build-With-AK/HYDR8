@@ -122,7 +122,7 @@ const FeaturedProducts = () => {
                         <div className="relative overflow-hidden rounded-3xl">
                             <img
                                 className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105"
-                                src="https://lh3.googleusercontent.com/aida/AP1WRLshNgivYSYBVpscY7FkU7-dZ73U6UlwBNJ4KKv1u1zKBS8jEaivlRImUlN9zm08zAO7nsTyIdXDCD0xxOir35k4388uOkTAoju6x5pPIgwVr3kn9PTvSEpu2GsVr6GXxi0mcJcu6sY2HIwRvryxzQKKqR7bcyGegRN1Wp3XXaGgSb3gzJsGDoPUFBOtkdxsN5oeGhKERfaJyDUctpp39YrLM0F10AaJkVPp6U5BXrE-UjSkuz4qxBaLviY"
+                                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80"
                                 alt="Aura Hydro Pure"
                             />
                             <div className="absolute top-4 left-4 sm:top-8 sm:left-8 md:top-12 md:left-12 glass-frost p-5 sm:p-6 md:p-8 rounded-2xl max-w-[80%] sm:max-w-xs group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-700">
@@ -166,7 +166,7 @@ const FeaturedProducts = () => {
                             <div className="relative rounded-[4rem] overflow-hidden aspect-[3/4]">
                                 <img
                                     className="w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida/AP1WRLt9irAtW3pyn97MQH4QlTFVSsaahqZbK5F5nMT9UHmSgql1BVt8XOYNBWXyPpb9epTz3wm0XT8DH_yqlLYEe3jNO7yZSpJEnpwH9FNkAnbD6o9uEDK1sIB2rwtAFn0y8hhRJKNQ6J4oQ_n3pa3psyHSWYVYv1aSezkHL75Xqk8b3je7LIFI7Mfosm5Yb07DTauTlrmsCSNs-olLlNAnnUUkqhGwzfgQ0zFdO99AN7p3-4246h3RtViuCA"
+                                    src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=600&q=80"
                                     alt="Cyber Steel V.2"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -195,8 +195,7 @@ const FeaturedProducts = () => {
                             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                                 <img
                                     className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-110"
-                                    src="https://lh3.googleusercontent.com/aida/AP1WRLvJtefOL_w7p-Ze1noNSIp75iK6FsstnSHKRmEKTWKDC0rktIfCvT7wbbjBDZWBF70L8Ianfp2G9D_qekKzl-aiYbQZHJixswbDdrtyO2_n0TT5DA3O-cpBgXD2qBXJTx3O2kxdMV1irX32auWyBNe-rxgW2B6O3Ykt7pzPjMNcDplwH-IDHuYoIAngsO3xnfD-jJLbFrhXSeuZxpk-EJDdJlJYSIGIDO5vjQ2WCHCB0sni5GkP-D8cEpc"
-                                    alt="Matte Obsidian"
+                                    src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80"
                                 />
                                 <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-[85%] glass-frost p-8 rounded-full flex justify-between items-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                                     <div>
