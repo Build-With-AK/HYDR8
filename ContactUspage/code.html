@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | AURA LIQUID PURITY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@300;400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#1a1c1d",
+                      "on-secondary-fixed": "#001e2c",
+                      "inverse-primary": "#c8c6c5",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#000000",
+                      "inverse-on-surface": "#f0f1f1",
+                      "surface-container": "#eeeeee",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#7cd0ff",
+                      "surface-variant": "#e2e2e2",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#838486",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-tint": "#5f5e5e",
+                      "on-surface": "#1a1c1c",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#c6c6c8",
+                      "surface-dim": "#dadada",
+                      "surface-container-low": "#f3f3f4",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-container-high": "#e8e8e8",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-surface-variant": "#444748",
+                      "on-background": "#1a1c1c",
+                      "secondary-container": "#40c2fd",
+                      "primary-container": "#1c1b1b",
+                      "on-primary-container": "#858383",
+                      "outline": "#747878",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#e5e2e1",
+                      "on-tertiary-fixed": "#1a1c1d",
+                      "surface-bright": "#f9f9f9",
+                      "tertiary-fixed": "#e2e2e4",
+                      "secondary": "#00668a",
+                      "outline-variant": "#c4c7c7",
+                      "on-secondary-container": "#004d6a",
+                      "inverse-surface": "#2f3131",
+                      "surface": "#f9f9f9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "32px",
+                      "margin-desktop": "80px",
+                      "container-max": "1440px",
+                      "margin-mobile": "24px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"],
+                      "display-xl-mobile": ["Plus Jakarta Sans"],
+                      "display-xl": ["Plus Jakarta Sans"],
+                      "label-sm": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                      "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-frost {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .magnetic-hover {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .magnetic-hover:hover {
+            transform: scale(1.05);
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .aqua-glow {
+            box-shadow: 0 0 30px rgba(64, 194, 253, 0.2);
+        }
+        .custom-cursor {
+            width: 24px;
+            height: 24px;
+            border: 1px solid #111;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.3s, height 0.3s, background 0.3s;
+            mix-blend-mode: difference;
+            background: white;
+        }
+        .floating-sculpture {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .droplet-animation {
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .droplet-morph {
+            border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+            width: 40px !important;
+            height: 60px !important;
+            transform: translateY(-200px);
+            opacity: 0;
+            background: #40c2fd !important;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden font-body-md">
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<nav class="fixed top-0 w-full z-[100] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/40 backdrop-blur-xl border-b border-white/10 shadow-sm transition-transform duration-500" id="navbar">
+<div class="font-display-xl-mobile md:text-display-xl-mobile font-bold text-primary tracking-tighter cursor-pointer">AURA</div>
+<div class="hidden md:flex gap-12 font-body-md text-body-md uppercase tracking-widest items-center">
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Shop</a>
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Philosophy</a>
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Archive</a>
+<a class="text-primary font-bold border-b border-primary py-1" href="#">Atelier</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm uppercase tracking-widest hover:scale-105 transition-transform duration-300 active:scale-95">Boutique</button>
+</nav>
+<main class="relative">
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden pt-20">
+<!-- STITCH_SHADER_START:ANIMATION_51 class="absolute inset-0 w-full h-full pointer-events-none opacity-60" -->
+<div class="absolute inset-0 w-full h-full pointer-events-none opacity-60" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_51" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_51');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Create soft, undulating liquid motion for an "editorial studio" feel
+    float noise = sin(uv.x * 2.8 + u_time * 0.15) * cos(uv.y * 3.2 + u_time * 0.1) * 0.12;
+    
+    // Interactive Water Ripple logic for the Contact atmosphere
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 18.0 - u_time * 1.8) * exp(-distToMouse * 3.5) * 0.025;
+    
+    // Volumetric light blooms that react to the "Conversation" focus
+    float d1 = distance(uv, vec2(0.8, 0.8) + 0.2 * vec2(sin(u_time * 0.08), cos(u_time * 0.06)));
+    float d2 = distance(uv, vec2(0.2, 0.2) + 0.15 * vec2(cos(u_time * 0.1), sin(u_time * 0.09)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.1, smoothstep(0.4, 0.0, distToMouse) * 0.3);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.012;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_51 -->
+<!-- STITCH_THREEJS_START:ANIMATION_52 class="absolute inset-0 w-full h-full z-0" -->
+<div class="absolute inset-0 w-full h-full z-0" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_52" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_52');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // Soft Studio Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x00f2ff, 1.2, 100);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+
+  const objects = [];
+
+  // Frosted Glass Spheres (Communication Nodes)
+  const sphereGeo = new THREE.SphereGeometry(0.15, 32, 32);
+  const sphereMat = new THREE.MeshPhongMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.2, 
+    shininess: 100 
+  });
+  
+  for(let i = 0; i < 22; i++) {
+    const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+    sphere.position.set((Math.random()-0.5)*18, (Math.random()-0.5)*12, (Math.random()-0.5)*10);
+    scene.add(sphere);
+    objects.push({ 
+      mesh: sphere, 
+      speed: 0.001 + Math.random()*0.004, 
+      phase: Math.random() * Math.PI * 2 
+    });
+  }
+
+  // Metallic Rings (Network/Connections)
+  const ringGeo = new THREE.TorusGeometry(3.8, 0.009, 16, 100);
+  const ringMat = new THREE.MeshPhongMaterial({ color: 0x111111, transparent: true, opacity: 0.07 });
+  
+  for(let i = 0; i < 4; i++) {
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.set((Math.random()-0.5)*16, (Math.random()-0.5)*10, -5);
+    ring.rotation.set(Math.random()*Math.PI, Math.random()*Math.PI, 0);
+    scene.add(ring);
+    objects.push({ mesh: ring, speed: 0.0006 + Math.random()*0.0012 });
+  }
+
+  camera.position.z = 12;
+
+  const mouse = new THREE.Vector2();
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  });
+
+  // Listen for custom form events to trigger "message" logic
+  window.addEventListener('aura-message-sent', () => {
+    objects.forEach(obj => {
+       if(obj.mesh.position.z > 0) {
+          obj.mesh.position.y += 5; // Float up on send
+       }
+    });
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    objects.forEach(obj => {
+      obj.mesh.rotation.x += obj.speed;
+      obj.mesh.rotation.y += obj.speed * 0.5;
+      if(obj.phase !== undefined) {
+        obj.mesh.position.y += Math.sin(Date.now() * 0.0005 + obj.phase) * 0.005;
+      }
+    });
+    
+    scene.rotation.y += (mouse.x * 0.06 - scene.rotation.y) * 0.02;
+    scene.rotation.x += (-mouse.y * 0.06 - scene.rotation.x) * 0.02;
+    
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_52 -->
+<div class="relative z-10 text-center max-w-5xl px-margin-mobile reveal-up" id="hero-content">
+<span class="font-label-sm text-secondary uppercase tracking-[0.4em] mb-6 block">Contact the Atelier</span>
+<h1 class="font-display-xl-mobile md:text-display-xl text-primary leading-[1.1] mb-8 tracking-tighter">
+                    Let's Create Something <span class="text-secondary italic">Refreshing</span> Together.
+                </h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Whether you're seeking a bespoke partnership or simply wishing to share a vision, our door is open. Pure water, pure design, pure connection.
+                </p>
+<div class="relative w-64 h-96 mx-auto group">
+<img class="w-full h-full object-contain floating-sculpture transition-all duration-700 group-hover:scale-110 drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+<div class="absolute inset-0 bg-secondary/10 blur-[80px] -z-10 rounded-full opacity-30"></div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+<span class="font-label-sm uppercase tracking-widest text-[10px]">Scroll to descend</span>
+<div class="w-[1px] h-12 bg-primary/20 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1/2 bg-primary animate-bounce"></div>
+</div>
+</div>
+</section>
+<section class="relative min-h-screen w-full flex items-center justify-center py-40 bg-surface-container-low/30 px-margin-mobile">
+<div class="w-full max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+<div class="reveal-up">
+<h2 class="font-headline-lg-mobile md:text-headline-lg text-primary mb-8">Begin the Dialogue</h2>
+<p class="font-body-md text-on-surface-variant mb-12 max-w-md">Our concierges are standing by to distill your inquiries into meaningful outcomes. Expect a response within 24 operational hours.</p>
+<div class="flex flex-col gap-12">
+<div class="group cursor-pointer">
+<span class="font-label-sm text-secondary uppercase mb-2 block">Direct Inquiry</span>
+<div class="font-headline-lg-mobile text-primary tracking-tight group-hover:translate-x-4 transition-transform duration-500">concierge@aura.com</div>
+</div>
+<div class="group cursor-pointer">
+<span class="font-label-sm text-secondary uppercase mb-2 block">Global Press</span>
+<div class="font-headline-lg-mobile text-primary tracking-tight group-hover:translate-x-4 transition-transform duration-500">+44 (0) 20 7946 0123</div>
+</div>
+<div class="group cursor-pointer">
+<span class="font-label-sm text-secondary uppercase mb-2 block">Headquarters</span>
+<div class="font-headline-lg-mobile text-primary tracking-tight group-hover:translate-x-4 transition-transform duration-500">London · Zurich · Tokyo</div>
+</div>
+</div>
+</div>
+<div class="reveal-up relative">
+<div class="glass-frost p-8 md:p-12 rounded-[2rem] shadow-2xl relative z-10">
+<form class="flex flex-col gap-8" id="contact-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative group">
+<label class="font-label-sm text-on-surface-variant mb-2 block uppercase text-[10px]">Your Name</label>
+<input class="w-full bg-transparent border-b border-primary/10 py-3 focus:outline-none focus:border-secondary transition-colors font-body-md placeholder:text-outline-variant" placeholder="Alexander Thorne" type="text"/>
+</div>
+<div class="relative group">
+<label class="font-label-sm text-on-surface-variant mb-2 block uppercase text-[10px]">Email Address</label>
+<input class="w-full bg-transparent border-b border-primary/10 py-3 focus:outline-none focus:border-secondary transition-colors font-body-md placeholder:text-outline-variant" placeholder="alex@design.co" type="email"/>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-on-surface-variant mb-4 block uppercase text-[10px]">Reason for contact</label>
+<div class="flex flex-wrap gap-3">
+<label class="cursor-pointer">
+<input class="hidden peer" name="reason" type="radio"/>
+<span class="px-6 py-2 rounded-full border border-primary/10 font-label-sm text-[10px] uppercase peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all inline-block">Partnership</span>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" name="reason" type="radio"/>
+<span class="px-6 py-2 rounded-full border border-primary/10 font-label-sm text-[10px] uppercase peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all inline-block">Press</span>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="reason" type="radio"/>
+<span class="px-6 py-2 rounded-full border border-primary/10 font-label-sm text-[10px] uppercase peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all inline-block">Bespoke Order</span>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="reason" type="radio"/>
+<span class="px-6 py-2 rounded-full border border-primary/10 font-label-sm text-[10px] uppercase peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all inline-block">Other</span>
+</label>
+</div>
+</div>
+<div class="relative">
+<label class="font-label-sm text-on-surface-variant mb-2 block uppercase text-[10px]">Your Message</label>
+<textarea class="w-full bg-transparent border-b border-primary/10 py-3 focus:outline-none focus:border-secondary transition-colors font-body-md placeholder:text-outline-variant resize-none" placeholder="How can we help define your flow?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary h-16 rounded-full font-label-sm uppercase tracking-widest relative overflow-hidden transition-all duration-500 hover:tracking-[0.2em] group flex items-center justify-center" id="send-btn" type="button">
+<span class="relative z-10 group-hover:scale-110 transition-transform">Send Message</span>
+<div class="absolute bg-on-primary/10 inset-0 translate-y-full droplet-animation" id="droplet"></div>
+</button>
+</form>
+</div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary/20 rounded-full blur-[60px] -z-0"></div>
+</div>
+</div>
+</section>
+<section class="relative py-40 overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="text-center mb-32 reveal-up">
+<h2 class="font-headline-lg text-primary mb-4">Connect Worldwide</h2>
+<p class="font-body-md text-on-surface-variant">Reach us through our digital ecosystems.</p>
+</div>
+<div class="relative h-[500px] flex items-center justify-center reveal-up">
+<div class="absolute w-[400px] h-[400px] border border-primary/5 rounded-full animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute w-[600px] h-[600px] border border-primary/5 rounded-full animate-[spin_35s_linear_infinite_reverse]"></div>
+<div class="w-32 h-32 bg-secondary rounded-full flex items-center justify-center aqua-glow relative z-20">
+<span class="material-symbols-outlined text-on-primary text-4xl" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<div class="absolute h-full w-full max-w-3xl">
+<div class="absolute top-[10%] left-[20%] glass-frost p-6 rounded-2xl magnetic-hover cursor-pointer floating-sculpture" style="animation-delay: 0s;">
+<span class="material-symbols-outlined text-primary text-3xl">chat</span>
+<div class="font-label-sm mt-2">Live Chat</div>
+</div>
+<div class="absolute top-[15%] right-[15%] glass-frost p-6 rounded-2xl magnetic-hover cursor-pointer floating-sculpture" style="animation-delay: 1s;">
+<span class="material-symbols-outlined text-primary text-3xl">mail</span>
+<div class="font-label-sm mt-2">Email</div>
+</div>
+<div class="absolute bottom-[10%] left-[25%] glass-frost p-6 rounded-2xl magnetic-hover cursor-pointer floating-sculpture" style="animation-delay: 2s;">
+<span class="material-symbols-outlined text-primary text-3xl">phone_iphone</span>
+<div class="font-label-sm mt-2">WhatsApp</div>
+</div>
+<div class="absolute bottom-[15%] right-[20%] glass-frost p-6 rounded-2xl magnetic-hover cursor-pointer floating-sculpture" style="animation-delay: 3s;">
+<span class="material-symbols-outlined text-primary text-3xl">photo_camera</span>
+<div class="font-label-sm mt-2">Instagram</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative py-40 bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="reveal-up order-2 lg:order-1">
+<div class="glass-frost p-4 rounded-3xl aqua-glow overflow-hidden h-[500px] relative group">
+<div class="w-full h-full bg-surface-dim rounded-2xl grayscale transition-all duration-700 group-hover:grayscale-0 relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A stylized minimalist vector map of central London showing high-end boutique districts. The aesthetic is monochromatic with soft aqua highlights on key landmarks. The layout is clean, artistic, and integrated into a luxury UI design system." data-location="London" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5Ipbqb44QA0hipK3MQ2d5cyyCZwGMxMW4pEmiBek_P1Q44De_wQBgo2eGYde4aWa2qAtx1Ggvcnpz0Gep1X9l4SeTIVznYwmpOiQt2bPYiRREhAhuZ0jRkJOoZ8Ui4PZNL45x3Rug52Tm_-ZRUtRkSm2o1ECE0nsuND6G5Yk67GBDHbsxwMmGw02FhxoG57HR6m5Bx0xx9uc11MkGlgU9OgaNA3TTaT9nfuq5HsyOugsKkPsbpQtU')"></div>
+<div class="absolute inset-0 bg-secondary/5 mix-blend-overlay"></div>
+</div>
+<div class="absolute bottom-10 left-10 glass-frost px-8 py-6 rounded-2xl">
+<div class="font-label-sm text-secondary mb-1">EUROPEAN FLAGSHIP</div>
+<div class="font-body-md font-bold text-primary">12-14 New Bond St, London</div>
+<div class="font-body-md text-on-surface-variant">W1S 3SR, United Kingdom</div>
+</div>
+</div>
+</div>
+<div class="reveal-up order-1 lg:order-2">
+<h2 class="font-headline-lg-mobile md:text-headline-lg text-primary mb-8">Atmosphere Matters.</h2>
+<p class="font-body-lg text-on-surface-variant mb-12">Visit our London Atelier for a sensory experience of Liquid Purity. Witness the craftsmanship of AURA in a space designed by architectural visionaries.</p>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-6 border-b border-primary/10 pb-6">
+<div class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div>
+<div class="font-label-sm text-[10px] text-on-surface-variant uppercase">Mon — Fri</div>
+<div class="font-body-md font-bold">10:00 — 19:00</div>
+</div>
+</div>
+<div class="flex items-center gap-6 border-b border-primary/10 pb-6">
+<div class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div>
+<div class="font-label-sm text-[10px] text-on-surface-variant uppercase">Sat — Sun</div>
+<div class="font-body-md font-bold">11:00 — 17:00</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="h-[80vh] flex flex-col items-center justify-center text-center px-margin-mobile relative overflow-hidden">
+<!-- STITCH_SHADER_START:ANIMATION_51 class="absolute inset-0 w-full h-full pointer-events-none opacity-20" -->
+<div class="absolute inset-0 w-full h-full pointer-events-none opacity-20" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_51" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_51');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Create soft, undulating liquid motion for an "editorial studio" feel
+    float noise = sin(uv.x * 2.8 + u_time * 0.15) * cos(uv.y * 3.2 + u_time * 0.1) * 0.12;
+    
+    // Interactive Water Ripple logic for the Contact atmosphere
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 18.0 - u_time * 1.8) * exp(-distToMouse * 3.5) * 0.025;
+    
+    // Volumetric light blooms that react to the "Conversation" focus
+    float d1 = distance(uv, vec2(0.8, 0.8) + 0.2 * vec2(sin(u_time * 0.08), cos(u_time * 0.06)));
+    float d2 = distance(uv, vec2(0.2, 0.2) + 0.15 * vec2(cos(u_time * 0.1), sin(u_time * 0.09)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.1, smoothstep(0.4, 0.0, distToMouse) * 0.3);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.012;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_51 -->
+<div class="max-w-4xl reveal-up">
+<blockquote class="font-display-xl-mobile md:text-headline-lg italic text-primary leading-tight mb-12">
+                    "Every Great Conversation Begins With <span class="text-secondary font-bold">One Drop</span>."
+                </blockquote>
+<div class="h-[1px] w-32 bg-primary/20 mx-auto"></div>
+</div>
+</section>
+</main>
+<footer class="relative w-full overflow-hidden bg-surface dark:bg-primary flex flex-col px-margin-mobile md:px-margin-desktop py-40 gap-32">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
+<div class="font-display-xl text-primary leading-none tracking-tighter">AURA</div>
+<div class="flex flex-wrap gap-8 text-on-surface-variant font-label-sm uppercase tracking-widest">
+<a class="hover:scale-105 transition-transform duration-700 ease-out" href="#">Privacy</a>
+<a class="hover:scale-105 transition-transform duration-700 ease-out" href="#">Terms</a>
+<a class="hover:scale-105 transition-transform duration-700 ease-out" href="#">Sustainability</a>
+<a class="hover:scale-105 transition-transform duration-700 ease-out" href="#">Press</a>
+</div>
+</div>
+<div class="border-t border-primary/5 pt-12 flex flex-col md:flex-row justify-between gap-8">
+<div class="font-label-sm text-[10px] opacity-40">© 2024 AURA LIQUID PURITY. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-6">
+<a class="w-10 h-10 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-500" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-500" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button, input, textarea, .magnetic-hover').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.width = '64px';
+                cursor.style.height = '64px';
+                cursor.style.background = 'rgba(64, 194, 253, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.width = '24px';
+                cursor.style.height = '24px';
+                cursor.style.background = 'white';
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        // Form Animation
+        const sendBtn = document.getElementById('send-btn');
+        const droplet = document.getElementById('droplet');
+        
+        sendBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const btnText = sendBtn.querySelector('span');
+            btnText.style.opacity = '0';
+            
+            sendBtn.classList.add('droplet-morph');
+            
+            setTimeout(() => {
+                sendBtn.style.opacity = '0';
+                sendBtn.style.transform = 'translateY(-300px) scale(0)';
+                
+                // Show success state
+                const successMsg = document.createElement('div');
+                successMsg.className = 'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-frost px-12 py-8 rounded-full z-[1000] font-headline-lg-mobile text-secondary reveal-up active';
+                successMsg.innerHTML = 'Transmission Received';
+                document.body.appendChild(successMsg);
+                
+                setTimeout(() => {
+                    successMsg.style.opacity = '0';
+                    setTimeout(() => successMsg.remove(), 1000);
+                }, 3000);
+            }, 600);
+        });
+
+        // Magnetic Effect
+        document.querySelectorAll('.magnetic-hover').forEach(button => {
+            button.addEventListener('mousemove', (e) => {
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                button.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = `translate(0, 0) scale(1)`;
+            });
+        });
+
+        // Navbar Scroll Effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const navbar = document.getElementById('navbar');
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

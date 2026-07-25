@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA | Categories</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dadada",
+                    "primary-container": "#1c1b1b",
+                    "on-tertiary-container": "#838486",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-secondary-fixed": "#001e2c",
+                    "tertiary-fixed-dim": "#c6c6c8",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#1c1b1b",
+                    "secondary-container": "#40c2fd",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#004c69",
+                    "on-background": "#1a1c1c",
+                    "surface-container-low": "#f3f3f4",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#000000",
+                    "on-tertiary-fixed": "#1a1c1d",
+                    "secondary-fixed": "#c4e7ff",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#5f5e5e",
+                    "on-surface-variant": "#444748",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#1a1c1d",
+                    "surface": "#f9f9f9",
+                    "secondary-fixed-dim": "#7cd0ff",
+                    "on-secondary-container": "#004d6a",
+                    "primary": "#000000",
+                    "on-surface": "#1a1c1c",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#454749",
+                    "secondary": "#00668a",
+                    "outline-variant": "#c4c7c7",
+                    "outline": "#747878",
+                    "inverse-primary": "#c8c6c5",
+                    "tertiary-fixed": "#e2e2e4",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-container": "#858383",
+                    "background": "#f9f9f9",
+                    "primary-fixed-dim": "#c8c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "unit": "8px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "display-xl-mobile": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-frost {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .magnetic-hover {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .orbit-mini {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .parallax-bg {
+            will-change: transform;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #111111;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden font-body-md">
+<!-- Fixed Atmosphere Layer -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<!-- STITCH_SHADER_START:ANIMATION_54 class="absolute inset-0 w-full h-full opacity-40" -->
+<div class="absolute inset-0 w-full h-full opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_54" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_54');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Smooth, evolving noise for a liquid-metal-meets-water atmosphere
+    float noise = sin(uv.x * 3.0 + u_time * 0.1) * cos(uv.y * 3.5 + u_time * 0.12) * 0.15;
+    
+    // Volumetric light blooms that react to the explorer's presence
+    float d1 = distance(uv, vec2(0.2, 0.8) + 0.2 * vec2(sin(u_time * 0.05), cos(u_time * 0.07)));
+    float d2 = distance(uv, vec2(0.8, 0.2) + 0.2 * vec2(cos(u_time * 0.1), sin(u_time * 0.08)));
+    float d3 = distance(uv, m);
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + noise));
+    finalColor = mix(finalColor, color2 * 1.1, smoothstep(0.4, 0.0, d3) * 0.2);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.012;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_54 -->
+<!-- STITCH_THREEJS_START:ANIMATION_55 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_55" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_55');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // Soft Studio Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x00f2ff, 1.2, 100);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+
+  const objects = [];
+
+  // Frosted Glass Spheres (Category Nodes)
+  const sphereGeo = new THREE.SphereGeometry(0.15, 32, 32);
+  const sphereMat = new THREE.MeshPhongMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.2, 
+    shininess: 100 
+  });
+  
+  for(let i = 0; i < 25; i++) {
+    const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+    sphere.position.set((Math.random()-0.5)*18, (Math.random()-0.5)*12, (Math.random()-0.5)*10);
+    scene.add(sphere);
+    objects.push({ 
+      mesh: sphere, 
+      speed: 0.001 + Math.random()*0.003, 
+      phase: Math.random() * Math.PI * 2 
+    });
+  }
+
+  // Metallic Rings (Architectural Connections)
+  const ringGeo = new THREE.TorusGeometry(4, 0.008, 16, 100);
+  const ringMat = new THREE.MeshPhongMaterial({ color: 0x111111, transparent: true, opacity: 0.08 });
+  
+  for(let i = 0; i < 4; i++) {
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.set((Math.random()-0.5)*15, (Math.random()-0.5)*10, -5);
+    ring.rotation.set(Math.random()*Math.PI, Math.random()*Math.PI, 0);
+    scene.add(ring);
+    objects.push({ mesh: ring, speed: 0.0005 + Math.random()*0.001 });
+  }
+
+  camera.position.z = 12;
+
+  const mouse = new THREE.Vector2();
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  });
+
+  // Category switch reaction
+  window.addEventListener('aura-category-switch', () => {
+    objects.forEach(obj => {
+       obj.mesh.position.y += (Math.random() - 0.5) * 2;
+    });
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    objects.forEach(obj => {
+      obj.mesh.rotation.x += obj.speed;
+      obj.mesh.rotation.y += obj.speed * 0.5;
+      if(obj.phase !== undefined) {
+        obj.mesh.position.y += Math.sin(Date.now() * 0.0004 + obj.phase) * 0.005;
+      }
+    });
+    
+    scene.rotation.y += (mouse.x * 0.06 - scene.rotation.y) * 0.02;
+    scene.rotation.x += (-mouse.y * 0.06 - scene.rotation.x) * 0.02;
+    
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_55 -->
+<!-- Overlay Noise/Refraction -->
+<div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay"></div>
+</div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/40 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="font-display-xl-mobile text-display-xl-mobile font-bold text-primary tracking-tighter uppercase">AURA</div>
+<div class="hidden md:flex gap-12 font-body-md text-body-md uppercase tracking-widest text-on-surface-variant">
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Shop</a>
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Philosophy</a>
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Archive</a>
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Atelier</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-label-sm rounded-full magnetic-hover hover:scale-105 transition-transform">
+            Boutique
+        </button>
+</nav>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="h-screen flex flex-col items-center justify-center relative overflow-hidden px-margin-mobile">
+<div class="text-center z-20 max-w-4xl">
+<span class="font-label-sm text-secondary uppercase tracking-[0.3em] mb-6 block">The Essence of Form</span>
+<h1 class="font-display-xl-mobile md:text-display-xl font-bold leading-tight tracking-tighter text-primary mb-12">
+                    Find Your <br/> Perfect Bottle.
+                </h1>
+</div>
+<div class="relative w-full max-w-[500px] aspect-[0.67] z-10 magnetic-hover" id="hero-bottle-container">
+<img alt="AURA Noir" class="w-full h-full object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40">
+<span class="font-label-sm uppercase tracking-widest">Scroll to Explore</span>
+<div class="w-px h-16 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- Category Exhibition (8 Sections) -->
+<!-- 1. Stainless Steel -->
+<section class="min-h-screen w-full flex items-center justify-center py-40 relative px-margin-mobile md:px-margin-desktop bg-transparent transition-colors duration-1000" data-color="cool-metallic" id="stainless">
+<div class="container-max w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 order-2 md:order-1 flex flex-col gap-8">
+<div class="glass-frost p-4 inline-flex w-fit rounded-full px-6">
+<span class="font-label-sm text-primary uppercase">Series 01</span>
+</div>
+<h2 class="font-headline-lg-mobile md:text-headline-lg font-bold text-primary leading-none">Stainless Steel</h2>
+<p class="font-body-lg text-on-surface-variant max-w-md">Precision engineered from aerospace-grade 18/8 steel. A monolithic statement of purity and permanence.</p>
+<button class="bg-primary text-on-primary w-fit px-12 py-5 font-label-sm uppercase tracking-widest magnetic-hover mt-4 flex items-center gap-4 group">
+                        Explore Collection
+                        <span class="material-symbols-outlined text-[20px] group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="md:col-span-7 relative order-1 md:order-2 h-[600px] md:h-[800px] flex items-center justify-center">
+<!-- Main Bottle -->
+<img alt="Stainless Hero" class="h-4/5 object-contain z-10 transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+<!-- Orbitals -->
+<div class="absolute top-20 left-10 w-32 h-32 orbit-mini" style="animation-delay: 0s;">
+<img alt="Mini 1" class="w-full h-full object-contain opacity-60 grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+</div>
+<div class="absolute bottom-20 right-10 w-40 h-40 orbit-mini" style="animation-delay: -2s;">
+<img alt="Mini 2" class="w-full h-full object-contain opacity-40 blur-[1px]" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+</div>
+<div class="absolute top-1/2 right-20 w-24 h-24 orbit-mini" style="animation-delay: -4s;">
+<img alt="Mini 3" class="w-full h-full object-contain opacity-50" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Glass -->
+<section class="min-h-screen w-full flex items-center justify-center py-40 relative px-margin-mobile md:px-margin-desktop" data-color="crystal-refraction" id="glass">
+<div class="container-max w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 relative h-[600px] md:h-[800px] flex items-center justify-center">
+<img alt="Glass Hero" class="h-4/5 object-contain z-10" src="https://lh3.googleusercontent.com/aida/AP1WRLsdxuQC4wqLgO9kruobx4o66N9M8uQe6btGbTqvOXVEkjZrwd1Tim2Xc7XhoLJy43pB6aWEDHq95Pr5lJO0t__KkjBmK7-0uKVBbGeD24IVOpaZPjXNkQXDEU0lmf-PWGqVpRukFGECzRuP8Mu5Ym0XJ1yQqADwIZLR2GRVixLGPReUmPeGL4edz2d2Q8078ZCY_N2IWIVz9nPnVx_iDnSCTB99yPwEw0En0Zvwe1W8FiFYyCj6QeprTps"/>
+<div class="absolute top-1/4 right-0 w-40 h-40 orbit-mini" style="animation-delay: -1s;">
+<img alt="Mini 1" class="w-full h-full object-contain opacity-40" src="https://lh3.googleusercontent.com/aida/AP1WRLsdxuQC4wqLgO9kruobx4o66N9M8uQe6btGbTqvOXVEkjZrwd1Tim2Xc7XhoLJy43pB6aWEDHq95Pr5lJO0t__KkjBmK7-0uKVBbGeD24IVOpaZPjXNkQXDEU0lmf-PWGqVpRukFGECzRuP8Mu5Ym0XJ1yQqADwIZLR2GRVixLGPReUmPeGL4edz2d2Q8078ZCY_N2IWIVz9nPnVx_iDnSCTB99yPwEw0En0Zvwe1W8FiFYyCj6QeprTps"/>
+</div>
+<div class="absolute bottom-1/4 left-0 w-32 h-32 orbit-mini" style="animation-delay: -3s;">
+<img alt="Mini 2" class="w-full h-full object-contain opacity-60" src="https://lh3.googleusercontent.com/aida/AP1WRLsdxuQC4wqLgO9kruobx4o66N9M8uQe6btGbTqvOXVEkjZrwd1Tim2Xc7XhoLJy43pB6aWEDHq95Pr5lJO0t__KkjBmK7-0uKVBbGeD24IVOpaZPjXNkQXDEU0lmf-PWGqVpRukFGECzRuP8Mu5Ym0XJ1yQqADwIZLR2GRVixLGPReUmPeGL4edz2d2Q8078ZCY_N2IWIVz9nPnVx_iDnSCTB99yPwEw0En0Zvwe1W8FiFYyCj6QeprTps"/>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-8">
+<div class="glass-frost p-4 inline-flex w-fit rounded-full px-6">
+<span class="font-label-sm text-primary uppercase">Series 02</span>
+</div>
+<h2 class="font-headline-lg-mobile md:text-headline-lg font-bold text-primary leading-none">Borosilicate Glass</h2>
+<p class="font-body-lg text-on-surface-variant max-w-md">The ultimate vessel for flavor neutrality. Wrapped in surgical-grade silicone for a touch that is both soft and secure.</p>
+<button class="bg-primary text-on-primary w-fit px-12 py-5 font-label-sm uppercase tracking-widest magnetic-hover mt-4">
+                        Explore Collection
+                    </button>
+</div>
+</div>
+</section>
+<!-- 3. Smart -->
+<section class="min-h-screen w-full flex items-center justify-center py-40 relative px-margin-mobile md:px-margin-desktop" data-color="electric-aura" id="smart">
+<div class="container-max w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 order-2 md:order-1 flex flex-col gap-8">
+<div class="glass-frost p-4 inline-flex w-fit rounded-full px-6">
+<span class="font-label-sm text-secondary uppercase">The Future</span>
+</div>
+<h2 class="font-headline-lg-mobile md:text-headline-lg font-bold text-primary leading-none">Smart Hydration</h2>
+<p class="font-body-lg text-on-surface-variant max-w-md">Bio-metric tracking meets liquid purity. Glowing rings of light communicate your hydration status in real-time.</p>
+<button class="bg-primary text-on-primary w-fit px-12 py-5 font-label-sm uppercase tracking-widest magnetic-hover mt-4">
+                        Discover Intelligence
+                    </button>
+</div>
+<div class="md:col-span-7 relative order-1 md:order-2 h-[600px] md:h-[800px] flex items-center justify-center">
+<img alt="Smart Hero" class="h-4/5 object-contain z-10" src="https://lh3.googleusercontent.com/aida/AP1WRLvxRDSfleZlCo9X5DemLMclfVtCTsm5t_ZQ4410juc9ZoYe3tY6Q7eCq3WJesI69B9Pw3A9xgDQMGYGrysp0-OEQDqBfgRnqbb-7oFwHmUmjCvenLouo4PUXRBsDICe7lSV516l8qFyELQwvGP0u8gISgF5x8vCLdv5yALi11i49C5IoqxVTzHcPtY2MZFnX2j6h7jezUeOc3wJxunIIRGFwl-l86spWjQG_PK9WOZr70514sMO5pumSA"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-[500px] h-[500px] border border-secondary/20 rounded-full animate-pulse"></div>
+</div>
+<div class="absolute top-10 right-20 w-28 h-28 orbit-mini">
+<img alt="Mini" class="w-full h-full object-contain opacity-30" src="https://lh3.googleusercontent.com/aida/AP1WRLvxRDSfleZlCo9X5DemLMclfVtCTsm5t_ZQ4410juc9ZoYe3tY6Q7eCq3WJesI69B9Pw3A9xgDQMGYGrysp0-OEQDqBfgRnqbb-7oFwHmUmjCvenLouo4PUXRBsDICe7lSV516l8qFyELQwvGP0u8gISgF5x8vCLdv5yALi11i49C5IoqxVTzHcPtY2MZFnX2j6h7jezUeOc3wJxunIIRGFwl-l86spWjQG_PK9WOZr70514sMO5pumSA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Travel/Sports -->
+<section class="min-h-screen w-full flex items-center justify-center py-40 relative px-margin-mobile md:px-margin-desktop" data-color="arctic-mist" id="travel">
+<div class="container-max w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 relative h-[600px] md:h-[800px] flex items-center justify-center">
+<img alt="Travel Collection" class="h-4/5 object-contain z-10" src="https://lh3.googleusercontent.com/aida/AP1WRLvZwRdSlR_ft58wALPM9z9rd1cFzj84viYAt-00QB4gtlbQz5D8f-8MFT6A0EDHyoYJz2P1zp1z8kBawpONFUjohZFCuGC22ADwYI5CEbxBup--VNL4PsfBKLe44EoSrwrHrmL418YTy2-3kCMDUF-R9_OeqVo1FvtQ-oONo6bnZYzIkEkDrqiVpwUKCcWMHIzoY511WDxmDYueY4NC46ruvuvUuXDBOI07DNLJJLVV2n0RfJmsr53ykHI"/>
+<div class="absolute top-1/4 left-1/4 w-48 h-48 orbit-mini opacity-20 blur-xl bg-secondary-container rounded-full"></div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-8">
+<div class="glass-frost p-4 inline-flex w-fit rounded-full px-6">
+<span class="font-label-sm text-primary uppercase">Active Series</span>
+</div>
+<h2 class="font-headline-lg-mobile md:text-headline-lg font-bold text-primary leading-none">Travel &amp; Sports</h2>
+<p class="font-body-lg text-on-surface-variant max-w-md">Designed for the nomadic soul. High-flow caps and lightweight carbiner-ready builds for every peak and terminal.</p>
+<button class="bg-primary text-on-primary w-fit px-12 py-5 font-label-sm uppercase tracking-widest magnetic-hover mt-4">
+                        Shop Performance
+                    </button>
+</div>
+</div>
+</section>
+<!-- Dynamic Content Gap (Simulated transition for remaining 4) -->
+<div class="h-[200vh] flex flex-col items-center justify-center relative px-margin-mobile">
+<div class="sticky top-1/2 -translate-y-1/2 text-center max-w-3xl">
+<h3 class="font-display-xl-mobile md:text-display-xl font-bold text-primary/10 select-none">CONTINUOUS <br/> EVOLUTION</h3>
+<p class="font-body-lg text-on-surface-variant mt-8 glass-frost p-8 rounded-xl">Our collection extends further. Insulated for 48-hour cold, miniaturized for kids, and expanded for smart lifestyle integration. Each piece carries the AURA hallmark of liquid purity.</p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="relative w-full overflow-hidden bg-surface flex flex-col w-full px-margin-mobile md:px-margin-desktop py-40 gap-32">
+<div class="w-full flex flex-col md:flex-row justify-between items-end gap-12">
+<div class="flex flex-col gap-12">
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl font-bold leading-none text-primary uppercase">AURA</h2>
+<div class="flex gap-8 font-label-sm uppercase tracking-widest text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="hover:text-primary transition-colors" href="#">Press</a>
+</div>
+</div>
+<div class="flex flex-col items-end gap-6">
+<div class="glass-frost p-8 rounded-2xl flex flex-col gap-4 min-w-[300px]">
+<span class="font-label-sm uppercase tracking-widest text-secondary">Join the Orbit</span>
+<div class="relative w-full">
+<input class="w-full bg-transparent border-b border-primary/20 py-4 focus:outline-none focus:border-primary font-body-md" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-primary">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<p class="font-label-sm text-on-surface-variant/60 uppercase">© 2024 AURA LIQUID PURITY. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+<!-- Large Decorative Text -->
+<div class="absolute -bottom-10 left-0 right-0 pointer-events-none overflow-hidden h-40">
+<div class="text-[200px] font-bold text-primary/5 whitespace-nowrap leading-none tracking-tighter">LIQUID PURITY LIQUID PURITY LIQUID PURITY</div>
+</div>
+</footer>
+<!-- Custom Cursor -->
+<div class="fixed top-0 left-0 w-8 h-8 border border-primary/50 rounded-full pointer-events-none z-[100] mix-blend-difference transition-transform duration-300 -translate-x-1/2 -translate-y-1/2 hidden md:block" id="cursor"></div>
+<script>
+        // Magnetic Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('button, a, .magnetic-hover').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2.5)';
+                cursor.style.backgroundColor = 'rgba(255,255,255,0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // Hero Parallax
+        const heroBottle = document.getElementById('hero-bottle-container');
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            if (heroBottle) {
+                heroBottle.style.transform = `translateY(${scroll * 0.1}px) rotate(${scroll * 0.02}deg)`;
+            }
+        });
+
+        // Intersection Observer for Background Color Morphs
+        const sections = document.querySelectorAll('section[data-color]');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const color = entry.target.getAttribute('data-color');
+                    updateAtmosphere(color);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        function updateAtmosphere(theme) {
+            // This function would interface with the WebGL/Three.js shaders
+            // For now, we simulate with subtle background shifts
+            const shader = document.querySelector('webgl-shader');
+            if (!shader) return;
+
+            switch(theme) {
+                case 'cool-metallic':
+                    shader.style.filter = 'hue-rotate(0deg) saturate(0.5)';
+                    break;
+                case 'crystal-refraction':
+                    shader.style.filter = 'hue-rotate(180deg) saturate(1.2)';
+                    break;
+                case 'electric-aura':
+                    shader.style.filter = 'hue-rotate(220deg) saturate(1.5) brightness(1.2)';
+                    break;
+                case 'arctic-mist':
+                    shader.style.filter = 'hue-rotate(160deg) saturate(0.8)';
+                    break;
+            }
+        }
+
+        // Magnetic Hover Logic
+        document.querySelectorAll('.magnetic-hover').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0, 0) scale(1)`;
+            });
+        });
+
+        // Smooth Scroll Initialization (Native Mock)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

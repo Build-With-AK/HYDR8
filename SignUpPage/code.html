@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA | Exclusive Community Invitation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#858383",
+                    "surface": "#f9f9f9",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f3f4",
+                    "inverse-surface": "#2f3131",
+                    "primary": "#000000",
+                    "on-tertiary-fixed-variant": "#454749",
+                    "tertiary-fixed-dim": "#c6c6c8",
+                    "on-tertiary-container": "#838486",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-secondary-fixed": "#001e2c",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#004d6a",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#1a1c1d",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-dim": "#dadada",
+                    "outline": "#747878",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1a1c1c",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "background": "#f9f9f9",
+                    "secondary-fixed": "#c4e7ff",
+                    "secondary-container": "#40c2fd",
+                    "surface-tint": "#5f5e5e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#7cd0ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#1a1c1d",
+                    "on-secondary-fixed-variant": "#004c69",
+                    "on-surface": "#1a1c1c",
+                    "tertiary-fixed": "#e2e2e4",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-surface-variant": "#444748",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "surface-bright": "#f9f9f9",
+                    "outline-variant": "#c4c7c7",
+                    "inverse-on-surface": "#f0f1f1",
+                    "secondary": "#00668a",
+                    "tertiary": "#000000",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-container": "#1c1b1b",
+                    "surface-container-highest": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "unit": "8px",
+                    "gutter": "32px",
+                    "margin-desktop": "80px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "display-xl-mobile": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(17, 17, 17, 0.03);
+        }
+        
+        .glass-input {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: #00668a;
+            box-shadow: 0 0 15px rgba(0, 102, 138, 0.1);
+            outline: none;
+        }
+
+        .magnetic-hover {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .magnetic-hover:hover {
+            transform: scale(1.02) translateY(-2px);
+        }
+
+        .button-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button-sweep::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: 0.7s;
+            pointer-events: none;
+        }
+
+        .button-sweep:hover::after {
+            left: 100%;
+            top: 100%;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .floating-bottle {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        /* Hide Scrollbar */
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden selection:bg-secondary/30">
+<!-- Background Layers -->
+<div class="fixed inset-0 z-0">
+<!-- STITCH_THREEJS_START:ANIMATION_35 class="absolute inset-0 w-full h-full opacity-40" -->
+<div class="absolute inset-0 w-full h-full opacity-40" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_35" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_35');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const container = document.getElementById('threejs-container-SIGNUP');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // Soft Studio Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x00f2ff, 1.2, 100);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+
+  const objects = [];
+
+  // Frosted Glass Spheres (Community/Drops)
+  const sphereGeo = new THREE.SphereGeometry(0.15, 32, 32);
+  const sphereMat = new THREE.MeshPhongMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.25, 
+    shininess: 100 
+  });
+  
+  for(let i = 0; i < 18; i++) {
+    const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+    sphere.position.set((Math.random()-0.5)*15, (Math.random()-0.5)*10, (Math.random()-0.5)*8);
+    scene.add(sphere);
+    objects.push({ 
+      mesh: sphere, 
+      speed: 0.002 + Math.random()*0.005, 
+      phase: Math.random() * Math.PI * 2,
+      origin: sphere.position.clone()
+    });
+  }
+
+  // Metallic Rings
+  const ringGeo = new THREE.TorusGeometry(2.5, 0.012, 16, 100);
+  const ringMat = new THREE.MeshPhongMaterial({ color: 0x111111, transparent: true, opacity: 0.12 });
+  
+  for(let i = 0; i < 3; i++) {
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.set((Math.random()-0.5)*12, (Math.random()-0.5)*8, -4);
+    ring.rotation.set(Math.random()*Math.PI, Math.random()*Math.PI, 0);
+    scene.add(ring);
+    objects.push({ mesh: ring, speed: 0.001 + Math.random()*0.002 });
+  }
+
+  camera.position.z = 10;
+
+  const mouse = new THREE.Vector2();
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  });
+
+  // Listen for custom registration progress events
+  window.addEventListener('aura-signup-progress', (e) => {
+    const progress = e.detail.progress; // 0 to 1
+    objects.forEach((obj, index) => {
+      if(obj.origin) {
+        // Droplets merge toward center as journey begins
+        obj.mesh.position.lerp(new THREE.Vector3(0,0,0), progress * 0.05);
+      }
+    });
+    pointLight.intensity = 1.2 + progress * 0.8;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    objects.forEach(obj => {
+      obj.mesh.rotation.x += obj.speed;
+      obj.mesh.rotation.y += obj.speed * 0.6;
+      if(obj.phase !== undefined) {
+        obj.mesh.position.y += Math.sin(Date.now() * 0.0006 + obj.phase) * 0.003;
+      }
+    });
+    
+    scene.rotation.y += (mouse.x * 0.06 - scene.rotation.y) * 0.02;
+    scene.rotation.x += (-mouse.y * 0.06 - scene.rotation.x) * 0.02;
+    
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_35 -->
+<!-- STITCH_SHADER_START:ANIMATION_36 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_36" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_36');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    float noise = sin(uv.x * 3.0 + u_time * 0.1) * cos(uv.y * 3.5 + u_time * 0.12) * 0.12;
+    
+    // Volumetric light blooms that react to cursor for the Sign Up atmosphere
+    float d1 = distance(uv, vec2(0.8, 0.2) + 0.25 * vec2(sin(u_time * 0.07), cos(u_time * 0.09)));
+    float d2 = distance(uv, vec2(0.1, 0.8) + 0.2 * vec2(cos(u_time * 0.11), sin(u_time * 0.08)));
+    float d3 = distance(uv, m);
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.85, 0.0, d1 + noise));
+    finalColor = mix(finalColor, color3, smoothstep(0.75, 0.0, d2));
+    finalColor = mix(finalColor, color2 * 1.1, smoothstep(0.45, 0.0, d3) * 0.35);
+    
+    // Subtle grain texture for premium editorial feel
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.015;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_36 -->
+</div>
+<!-- Navigation (TopAppBar Shared Component Simulation) -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 z-50 bg-surface/40 backdrop-blur-xl border-b border-white/10">
+<div class="font-display-xl-mobile md:font-display-xl-mobile font-bold text-primary tracking-tighter">AURA</div>
+<div class="hidden md:flex gap-12 font-body-md text-body-md uppercase tracking-widest">
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Shop</a>
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Philosophy</a>
+<a class="text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Archive</a>
+</div>
+<div class="font-body-md text-body-md uppercase tracking-widest text-primary font-bold">Boutique</div>
+</nav>
+<main class="relative z-10 flex flex-col md:flex-row w-full h-screen">
+<!-- Left Side: Brand Experience -->
+<section class="flex-1 flex flex-col justify-center px-margin-mobile md:px-margin-desktop pt-24 md:pt-0">
+<div class="max-w-xl space-y-8 animate-fade-in-up">
+<h1 class="font-display-xl-mobile md:font-display-xl font-bold leading-none text-primary tracking-tighter">
+                    Begin Your <br/><span class="text-secondary-container">Journey.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-md">
+                    Join an elite circle of visionaries committed to liquid purity. Unlock early access to archival drops and bespoke atelier services.
+                </p>
+<div class="pt-12 relative">
+<!-- Premium Bottle Image Placeholder -->
+<div class="floating-bottle relative z-10 w-64 md:w-80">
+<img class="w-full drop-shadow-2xl" data-alt="A high-end, minimalist matte black AURA water bottle floating in a white studio environment. The lighting is cinematic, highlighting the bottle's elegant curves and its premium brushed metal cap. Soft water droplets cling to the surface of the bottle, creating a feeling of freshness and technological precision in line with a high-luxury wellness brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDfdyx9WG8UN6xaNAKN5PeR9m6hkVC_d6qK1ejgZ1EmA_p7Pscjc-oWoUOCqJyI1XvXq1gBIit4xQ8S7XdcaqObwp4WOjCJWN6bohcXW40QDhqRzdDiMp1q1qyZKycQl2wYefHglYZx52aqnE4SQpXCvAuZO5PgRFu5OtryTrjDyztbjtg9khNblOD8fVtIxcc3CqPWrYxWzB_z5DBeSYmmYqkRDC-665bn0ZWdUEgUFqqcEZiyQj"/>
+</div>
+<!-- Decorative Glass Glow -->
+<div class="absolute -inset-20 bg-secondary/10 blur-[120px] rounded-full -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Right Side: Registration Experience -->
+<section class="flex-1 flex items-center justify-center px-margin-mobile md:px-margin-desktop bg-white/5 md:bg-transparent">
+<div class="glass-panel w-full max-w-lg p-8 md:p-12 rounded-3xl animate-fade-in-up transition-all duration-700">
+<header class="mb-10">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary mb-2">Create Account</h2>
+<p class="font-body-md text-on-surface-variant">Step into the future of clarity.</p>
+</header>
+<form class="space-y-6" id="signupForm">
+<div class="grid grid-cols-1 gap-6">
+<div class="relative group">
+<label class="block font-label-sm text-label-sm mb-2 uppercase opacity-60">Full Name</label>
+<input class="glass-input w-full px-5 py-4 rounded-xl font-body-md text-primary placeholder:opacity-30" placeholder="ALEXANDER VOSS" required="" type="text"/>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-label-sm mb-2 uppercase opacity-60">Email Address</label>
+<input class="glass-input w-full px-5 py-4 rounded-xl font-body-md text-primary placeholder:opacity-30" placeholder="IDENTITY@AURA.CO" required="" type="email"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="relative group">
+<label class="block font-label-sm text-label-sm mb-2 uppercase opacity-60">Password</label>
+<input class="glass-input w-full px-5 py-4 rounded-xl font-body-md text-primary" id="passwordInput" placeholder="••••••••" required="" type="password"/>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-label-sm mb-2 uppercase opacity-60">Confirm</label>
+<input class="glass-input w-full px-5 py-4 rounded-xl font-body-md text-primary" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-label-sm mb-2 uppercase opacity-60">Preferred Bottle Style</label>
+<select class="glass-input w-full px-5 py-4 rounded-xl font-body-md text-primary appearance-none cursor-pointer">
+<option>AURA NOIR - MATTE BLACK</option>
+<option>AURA PURE - FROSTED GLASS</option>
+<option>AURA TITAN - BRUSHED STEEL</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 bottom-4 pointer-events-none opacity-40">expand_more</span>
+</div>
+</div>
+<div class="pt-4">
+<button class="button-sweep magnetic-hover w-full bg-primary text-on-primary py-5 rounded-xl font-label-sm text-label-sm uppercase tracking-widest flex justify-center items-center gap-3" type="submit">
+                            Initiate Account
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="mt-8 pt-8 border-t border-white/20">
+<p class="text-center font-label-sm text-[10px] uppercase opacity-40 mb-6 tracking-widest">Connect with Identity Providers</p>
+<div class="flex justify-center gap-6">
+<button class="glass-panel p-4 rounded-full magnetic-hover hover:bg-white/60 transition-all">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12.48 10.92v3.28h7.84c-.24 1.84-.908 3.152-1.896 4.136-1.248 1.248-3.2 2.52-6.952 2.52-5.752 0-10.32-4.664-10.32-10.42s4.568-10.42 10.32-10.42c3.128 0 5.376 1.224 7.064 2.824l2.32-2.32c-2.424-2.312-5.592-3.616-9.384-3.616-7.832 0-14.224 6.392-14.224 14.224s6.392 14.224 14.224 14.224c4.224 0 7.424-1.392 9.872-3.952 2.528-2.528 3.328-6.064 3.328-8.8 0-.84-.064-1.64-.192-2.424h-10.608z"></path>
+</svg>
+</button>
+<button class="glass-panel p-4 rounded-full magnetic-hover hover:bg-white/60 transition-all">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M17.05 20.28c-.98.95-2.05 1.51-3.19 1.51-1.32 0-2.22-.61-3.66-.61-1.42 0-2.35.6-3.71.6-1.12 0-2.12-.55-3.04-1.46C1.51 18.23.49 15.22.49 12.18c0-3.32 1.76-5.46 3.61-5.46 1.05 0 2.05.57 3.02.57 1.05 0 1.95-.57 3.02-.57 1.42 0 2.81.72 3.66 1.96-3.12 1.29-2.59 5.86.37 6.94-.72 1.74-1.55 3.51-3.13 4.66zM12.02 5.07c.07-2.31-1.95-4.47-4.14-4.57-.22 2.45 2.15 4.54 4.14 4.57z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component Simulation) -->
+<footer class="fixed bottom-0 w-full flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-8 z-50 pointer-events-none">
+<div class="font-label-sm text-[10px] uppercase tracking-widest opacity-40 pointer-events-auto">© 2024 AURA LIQUID PURITY. ALL RIGHTS RESERVED.</div>
+<div class="hidden md:flex gap-8 font-label-sm text-[10px] uppercase tracking-widest opacity-40 pointer-events-auto">
+<a class="hover:opacity-100 transition-opacity" href="#">Privacy</a>
+<a class="hover:opacity-100 transition-opacity" href="#">Terms</a>
+<a class="hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+</div>
+</footer>
+<script>
+        // Micro-interactions and Three.js event dispatching
+        const passwordInput = document.getElementById('passwordInput');
+        const signupForm = document.getElementById('signupForm');
+        const inputs = signupForm.querySelectorAll('input, select');
+
+        // Track signup progress
+        let completedFields = new Set();
+
+        inputs.forEach(input => {
+            input.addEventListener('change', (e) => {
+                if (e.target.value.length > 0) {
+                    if (!completedFields.has(e.target)) {
+                        completedFields.add(e.target);
+                        // Dispatch custom event for 3D interaction (droplets merging)
+                        window.dispatchEvent(new CustomEvent('aura-signup-progress', {
+                            detail: { 
+                                progress: completedFields.size / inputs.length,
+                                fieldName: e.target.placeholder || 'select'
+                            }
+                        }));
+                    }
+                } else {
+                    completedFields.delete(e.target);
+                }
+            });
+        });
+
+        // Password strength to bottle fill simulation
+        passwordInput.addEventListener('input', (e) => {
+            const strength = Math.min(e.target.value.length / 12, 1);
+            // This event would be picked up by the animation_36 script to fill the bottle with glowing aqua water
+            window.dispatchEvent(new CustomEvent('aura-password-strength', {
+                detail: { intensity: strength }
+            }));
+        });
+
+        // Form success effect
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Trigger ripple effect in environment
+            window.dispatchEvent(new CustomEvent('aura-account-created'));
+            
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = 'Success <span class="material-symbols-outlined">done_all</span>';
+            btn.classList.replace('bg-primary', 'bg-secondary-container');
+            
+            setTimeout(() => {
+                // Potential redirection or success modal
+                console.log("Account Verified. Welcome to AURA.");
+            }, 1000);
+        });
+
+        // Magnetic hover implementation for elements with the class
+        document.querySelectorAll('.magnetic-hover').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                el.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) scale(1.02)`;
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = `translate(0, 0) scale(1)`;
+            });
+        });
+    </script>
+</body></html>

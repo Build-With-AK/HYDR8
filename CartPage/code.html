@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA | Your Curated Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#7cd0ff",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary": "#000000",
+                        "secondary-fixed": "#c4e7ff",
+                        "surface-tint": "#5f5e5e",
+                        "tertiary-fixed-dim": "#c6c6c8",
+                        "secondary-container": "#40c2fd",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1c1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#444748",
+                        "outline": "#747878",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#1a1c1d",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-surface": "#2f3131",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed": "#1a1c1d",
+                        "inverse-primary": "#c8c6c5",
+                        "outline-variant": "#c4c7c7",
+                        "on-primary-container": "#858383",
+                        "on-background": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eeeeee",
+                        "tertiary-fixed": "#e2e2e4",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-container": "#838486",
+                        "secondary": "#00668a",
+                        "on-secondary-fixed": "#001e2c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#004d6a",
+                        "on-tertiary-fixed-variant": "#454749",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "primary": "#000000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-xl-mobile": ["Plus Jakarta Sans"],
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-frost {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .magnetic-hover {
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .magnetic-hover:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .floating-bottle-parallax {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(2deg); }
+        }
+
+        .liquid-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .liquid-ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(124, 208, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease-out, height 0.6s ease-out;
+        }
+
+        .liquid-ripple:active::after {
+            width: 300%;
+            height: 300%;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed-dim/30 overflow-x-hidden">
+<!-- Global Atmospheric Layers -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<!-- STITCH_SHADER_START:ANIMATION_61 class="w-full h-full opacity-60" -->
+<div class="w-full h-full opacity-60" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_61" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_61');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Smooth, evolving noise for a liquid-metal-meets-water atmosphere
+    float noise = sin(uv.x * 3.0 + u_time * 0.1) * cos(uv.y * 3.5 + u_time * 0.12) * 0.15;
+    
+    // Interactive Water Ripple logic for the "Curated" atmosphere
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 20.0 - u_time * 2.0) * exp(-distToMouse * 4.0) * 0.02;
+    
+    // Volumetric light blooms that move with the narrative flow
+    float d1 = distance(uv, vec2(0.2, 0.8) + 0.2 * vec2(sin(u_time * 0.05), cos(u_time * 0.07)));
+    float d2 = distance(uv, vec2(0.8, 0.2) + 0.2 * vec2(cos(u_time * 0.1), sin(u_time * 0.08)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.1, smoothstep(0.4, 0.0, distToMouse) * 0.25);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.012;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_61 -->
+<!-- STITCH_THREEJS_START:ANIMATION_60 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_60" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_60');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const container = document.getElementById('threejs-container-CART');
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // Soft Studio Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x00f2ff, 1.2, 100);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+
+  const objects = [];
+
+  // Frosted Glass Nodes (Selection artifacts)
+  const sphereGeo = new THREE.SphereGeometry(0.15, 32, 32);
+  const sphereMat = new THREE.MeshPhongMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.2, 
+    shininess: 100 
+  });
+  
+  for(let i = 0; i < 24; i++) {
+    const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+    sphere.position.set((Math.random()-0.5)*18, (Math.random()-0.5)*12, (Math.random()-0.5)*10);
+    scene.add(sphere);
+    objects.push({ 
+      mesh: sphere, 
+      speed: 0.001 + Math.random()*0.003, 
+      phase: Math.random() * Math.PI * 2 
+    });
+  }
+
+  // Metallic Rings (Architectural Frame)
+  const ringGeo = new THREE.TorusGeometry(4.2, 0.008, 16, 100);
+  const ringMat = new THREE.MeshPhongMaterial({ color: 0x111111, transparent: true, opacity: 0.06 });
+  
+  for(let i = 0; i < 4; i++) {
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.set((Math.random()-0.5)*16, (Math.random()-0.5)*10, -5);
+    ring.rotation.set(Math.random()*Math.PI, Math.random()*Math.PI, 0);
+    scene.add(ring);
+    objects.push({ mesh: ring, speed: 0.0004 + Math.random()*0.0008 });
+  }
+
+  camera.position.z = 12;
+
+  const mouse = new THREE.Vector2();
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  });
+
+  // Animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    objects.forEach(obj => {
+      obj.mesh.rotation.x += obj.speed;
+      obj.mesh.rotation.y += obj.speed * 0.5;
+      if(obj.phase !== undefined) {
+        obj.mesh.position.y += Math.sin(Date.now() * 0.0004 + obj.phase) * 0.005;
+      }
+    });
+    
+    scene.rotation.y += (mouse.x * 0.05 - scene.rotation.y) * 0.02;
+    scene.rotation.x += (-mouse.y * 0.05 - scene.rotation.x) * 0.02;
+    
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_60 -->
+</div>
+<!-- Persistent Navigation -->
+<nav class="fixed top-0 w-full bg-surface/40 backdrop-blur-xl border-b border-white/10 h-20 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop">
+<div class="font-display-xl-mobile text-display-xl-mobile font-bold text-primary tracking-tighter">AURA</div>
+<div class="hidden md:flex gap-12 font-body-md text-body-md uppercase tracking-widest text-on-surface-variant">
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Shop</a>
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Philosophy</a>
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Archive</a>
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Atelier</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-label-sm rounded-full magnetic-hover">
+            Boutique
+        </button>
+</nav>
+<main class="relative z-10 pt-40 pb-40 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row items-center justify-between gap-16 min-h-[70vh]">
+<div class="w-full md:w-1/2 space-y-8">
+<div class="space-y-4">
+<span class="font-label-sm text-secondary uppercase tracking-[0.3em]">Curation Stage 01</span>
+<h1 class="font-display-xl-mobile md:text-display-xl font-bold leading-tight text-primary">
+                        Your Curated<br/>Collection.
+                    </h1>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Every bottle you've selected has been thoughtfully crafted. Review your collection before continuing your journey into the realm of liquid purity.
+                </p>
+<div class="flex gap-6">
+<button class="flex items-center gap-3 bg-primary text-on-primary px-10 py-5 font-label-sm rounded-full transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] group">
+<span>SECURE CHECKOUT</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex justify-center perspective-1000">
+<div class="relative floating-bottle-parallax cursor-pointer transition-transform duration-500 ease-out" id="hero-bottle">
+<img alt="AURA Noir Bottle" class="w-72 md:w-[450px] drop-shadow-[0_80px_100px_rgba(0,0,0,0.15)] filter saturate-[0.8] contrast-[1.1]" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+<div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-48 h-8 bg-black/10 blur-2xl rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Showroom Display (Organic Bento) -->
+<section class="mt-40 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+<!-- Product Module 01 -->
+<div class="md:col-span-7 group">
+<div class="glass-frost rounded-[40px] p-12 flex flex-col md:flex-row items-center gap-12 magnetic-hover relative overflow-hidden">
+<div class="w-full md:w-1/2">
+<img alt="AURA Noir" class="w-full h-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<div class="space-y-2">
+<span class="font-label-sm text-secondary">01 / 03</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">AURA Noir</h3>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest">Finish: Matte Charcoal</p>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant mb-2">QUANTITY</span>
+<div class="flex items-center gap-4 glass-frost rounded-full px-4 py-2 border-white/20">
+<button class="material-symbols-outlined text-primary hover:text-secondary-fixed-dim transition-colors liquid-ripple p-1">remove</button>
+<span class="font-body-md font-bold px-2">01</span>
+<button class="material-symbols-outlined text-primary hover:text-secondary-fixed-dim transition-colors liquid-ripple p-1">add</button>
+</div>
+</div>
+<div class="flex flex-col items-end flex-grow">
+<span class="font-label-sm text-on-surface-variant mb-2">PRICE</span>
+<span class="font-headline-lg text-headline-lg text-primary">$185.00</span>
+</div>
+</div>
+<button class="flex items-center gap-2 font-label-sm text-error/60 hover:text-error transition-colors group/del">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="border-b border-transparent group-hover/del:border-error">DISSOLVE FROM COLLECTION</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Summary Sculpture -->
+<div class="md:col-span-5 md:row-span-2">
+<div class="sticky top-32 glass-frost rounded-[40px] p-12 space-y-12">
+<h2 class="font-headline-lg text-headline-lg text-primary">Curated Summary</h2>
+<div class="space-y-6">
+<div class="flex justify-between items-center py-4 border-b border-white/10">
+<span class="font-body-md text-on-surface-variant">Collection Subtotal</span>
+<span class="font-body-md font-bold text-primary">$415.00</span>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-white/10">
+<span class="font-body-md text-on-surface-variant">Sustainable Logistics</span>
+<span class="font-body-md font-bold text-primary">COMPLIMENTARY</span>
+</div>
+<div class="flex flex-col gap-4 py-4">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">ACCESS CODE</span>
+<div class="relative group/input">
+<input class="w-full bg-white/5 border-b border-white/20 focus:border-secondary-fixed-dim focus:ring-0 px-0 py-4 font-body-md transition-all outline-none" placeholder="GIFT-AURA-2024" type="text"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary-fixed-dim hover:text-secondary transition-colors">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="pt-8 space-y-6">
+<div class="flex justify-between items-end">
+<span class="font-label-sm text-on-surface-variant mb-4">GRAND TOTAL</span>
+<div class="text-right">
+<span class="font-display-xl-mobile md:text-[64px] font-bold text-primary tracking-tighter leading-none" id="grand-total">$415.00</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-6 rounded-full font-label-sm tracking-[0.2em] overflow-hidden relative group hover:shadow-2xl transition-all duration-500">
+<span class="relative z-10">INITIATE SECURE CHECKOUT</span>
+<div class="absolute inset-0 bg-gradient-to-r from-secondary-fixed-dim/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+</button>
+<button class="w-full text-center font-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">keyboard_backspace</span>
+                            CONTINUE SHOPPING
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product Module 02 -->
+<div class="md:col-span-7">
+<div class="glass-frost rounded-[40px] p-12 flex flex-col md:flex-row-reverse items-center gap-12 magnetic-hover overflow-hidden">
+<div class="w-full md:w-1/2">
+<img alt="AURA Crystal" class="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLsdxuQC4wqLgO9kruobx4o66N9M8uQe6btGbTqvOXVEkjZrwd1Tim2Xc7XhoLJy43pB6aWEDHq95Pr5lJO0t__KkjBmK7-0uKVBbGeD24IVOpaZPjXNkQXDEU0lmf-PWGqVpRukFGECzRuP8Mu5Ym0XJ1yQqADwIZLR2GRVixLGPReUmPeGL4edz2d2Q8078ZCY_N2IWIVz9nPnVx_iDnSCTB99yPwEw0En0Zvwe1W8FiFYyCj6QeprTps"/>
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<div class="space-y-2">
+<span class="font-label-sm text-secondary">02 / 03</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">AURA Crystal</h3>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest">Finish: Borosilicate Clear</p>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant mb-2">QUANTITY</span>
+<div class="flex items-center gap-4 glass-frost rounded-full px-4 py-2">
+<button class="material-symbols-outlined text-primary liquid-ripple">remove</button>
+<span class="font-body-md font-bold px-2">01</span>
+<button class="material-symbols-outlined text-primary liquid-ripple">add</button>
+</div>
+</div>
+<div class="flex flex-col items-end flex-grow">
+<span class="font-label-sm text-on-surface-variant mb-2">PRICE</span>
+<span class="font-headline-lg text-headline-lg text-primary">$135.00</span>
+</div>
+</div>
+<button class="flex items-center gap-2 font-label-sm text-error/60 hover:text-error transition-colors group/del">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>DISSOLVE FROM COLLECTION</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Module 03 -->
+<div class="md:col-span-6">
+<div class="glass-frost rounded-[40px] p-12 flex flex-col items-center gap-8 magnetic-hover">
+<div class="h-64 flex items-center justify-center">
+<img alt="AURA Aqua" class="h-full w-auto drop-shadow-xl" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+</div>
+<div class="w-full text-center space-y-4">
+<h3 class="font-headline-lg text-headline-lg text-primary">AURA Frost</h3>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest">Finish: Arctic Blue</p>
+<span class="block font-headline-lg text-headline-lg text-primary">$95.00</span>
+<div class="flex justify-center gap-4 pt-4">
+<div class="flex items-center gap-4 glass-frost rounded-full px-6 py-3">
+<button class="material-symbols-outlined text-primary liquid-ripple">remove</button>
+<span class="font-body-md font-bold">01</span>
+<button class="material-symbols-outlined text-primary liquid-ripple">add</button>
+</div>
+<button class="glass-frost w-14 h-14 rounded-full flex items-center justify-center text-error/60 hover:text-error transition-all hover:rotate-12">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Atmosphere Card -->
+<div class="md:col-span-6 bg-primary rounded-[40px] p-12 flex flex-col justify-end text-on-primary overflow-hidden relative group">
+<div class="absolute inset-0 opacity-40 mix-blend-screen group-hover:scale-110 transition-transform duration-[2s]">
+<!-- STITCH_SHADER_START:ANIMATION_61 class="w-full h-full" -->
+<div class="w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_61" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_61');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Smooth, evolving noise for a liquid-metal-meets-water atmosphere
+    float noise = sin(uv.x * 3.0 + u_time * 0.1) * cos(uv.y * 3.5 + u_time * 0.12) * 0.15;
+    
+    // Interactive Water Ripple logic for the "Curated" atmosphere
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 20.0 - u_time * 2.0) * exp(-distToMouse * 4.0) * 0.02;
+    
+    // Volumetric light blooms that move with the narrative flow
+    float d1 = distance(uv, vec2(0.2, 0.8) + 0.2 * vec2(sin(u_time * 0.05), cos(u_time * 0.07)));
+    float d2 = distance(uv, vec2(0.8, 0.2) + 0.2 * vec2(cos(u_time * 0.1), sin(u_time * 0.08)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.1, smoothstep(0.4, 0.0, distToMouse) * 0.25);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.012;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_61 -->
+</div>
+<div class="relative z-10 space-y-4">
+<span class="font-label-sm text-secondary-fixed uppercase tracking-widest">THE EXPERIENCE</span>
+<h2 class="font-display-xl-mobile text-display-xl-mobile font-bold leading-tight">Elevated<br/>Hydration.</h2>
+<p class="font-body-md text-on-primary-fixed max-w-xs">Complete your checkout to access the exclusive AURA rewards program and sustainability dashboard.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full overflow-hidden bg-surface dark:bg-primary px-margin-mobile md:px-margin-desktop py-40 flex flex-col gap-32">
+<div class="flex flex-col md:flex-row justify-between items-end gap-20">
+<div class="font-display-xl text-primary font-bold leading-none select-none">
+                AURA
+            </div>
+<div class="flex flex-wrap gap-12 font-label-sm text-on-surface-variant uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="hover:text-primary transition-colors" href="#">Press</a>
+</div>
+</div>
+<div class="flex justify-between items-center border-t border-white/5 pt-12 font-label-sm text-on-surface-variant/40">
+<span>© 2024 AURA LIQUID PURITY. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined">language</span>
+<span>EN / USD</span>
+</div>
+</div>
+</footer>
+<script>
+        // Cursor-responsive bottle tilt
+        const heroBottle = document.getElementById('hero-bottle');
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            heroBottle.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Simple count-up effect for grand total
+        const countUp = (elementId, endValue) => {
+            const element = document.getElementById(elementId);
+            let startValue = 0;
+            const duration = 2000;
+            const increment = endValue / (duration / 16);
+            
+            const timer = setInterval(() => {
+                startValue += increment;
+                if (startValue >= endValue) {
+                    element.textContent = `$${endValue.toFixed(2)}`;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = `$${startValue.toFixed(2)}`;
+                }
+            }, 16);
+        };
+
+        // Initialize animations on load
+        window.addEventListener('DOMContentLoaded', () => {
+            countUp('grand-total', 415.00);
+        });
+
+        // Magnetic button effect helper
+        document.querySelectorAll('.magnetic-hover').forEach(btn => {
+            btn.addEventListener('mousemove', function(e) {
+                const position = this.getBoundingClientRect();
+                const x = e.pageX - position.left - position.width / 2;
+                const y = e.pageY - position.top - position.height / 2;
+                this.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+            });
+            btn.addEventListener('mouseout', function() {
+                this.style.transform = `translate(0px, 0px) scale(1)`;
+            });
+        });
+    </script>
+</body></html>

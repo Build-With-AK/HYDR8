@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#474646",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "surface-tint": "#5f5e5e",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#c4c7c7",
+                        "error": "#ba1a1a",
+                        "tertiary": "#000000",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-surface-variant": "#444748",
+                        "primary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454749",
+                        "on-secondary-container": "#004d6a",
+                        "primary": "#000000",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1d",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e2e2e4",
+                        "on-secondary-fixed": "#001e2c",
+                        "tertiary-container": "#1a1c1d",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed": "#c4e7ff",
+                        "on-tertiary-container": "#838486",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-container": "#1c1b1b",
+                        "background": "#f9f9f9",
+                        "inverse-primary": "#c8c6c5",
+                        "surface": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "on-primary-container": "#858383",
+                        "outline": "#747878",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed-dim": "#7cd0ff",
+                        "secondary-container": "#40c2fd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c8",
+                        "secondary": "#00668a",
+                        "on-background": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eeeeee",
+                        "inverse-surface": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-xl-mobile": ["Plus Jakarta Sans"],
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-frost {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .magnetic-hover {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .magnetic-hover:hover {
+            transform: scale(1.05) translateZ(0);
+        }
+        .noise-overlay {
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .vertical-progress {
+            width: 2px;
+            height: 100vh;
+            background: rgba(0,0,0,0.05);
+            position: fixed;
+            right: 40px;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            width: 100%;
+            height: 0%;
+            background: #000;
+            transition: height 0.1s ease;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary/30">
+<div class="noise-overlay"></div>
+<!-- Reading Progress -->
+<div class="vertical-progress hidden md:block">
+<div class="progress-fill" id="scrollProgress"></div>
+</div>
+<!-- Navigation Shell -->
+<header class="fixed top-0 w-full bg-surface/40 backdrop-blur-xl border-b border-white/10 shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full z-50">
+<div class="font-display-xl-mobile text-display-xl-mobile font-bold text-primary tracking-tighter">AURA</div>
+<nav class="hidden md:flex gap-12 font-body-md text-body-md uppercase tracking-widest text-on-surface-variant">
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Shop</a>
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Philosophy</a>
+<a class="text-primary font-bold border-b border-primary" href="#">Archive</a>
+<a class="hover:opacity-70 transition-opacity duration-500" href="#">Atelier</a>
+</nav>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm text-label-sm uppercase hover:scale-105 transition-transform duration-300">Boutique</button>
+</header>
+<main class="relative">
+<!-- Liquid Background Shader -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+<!-- STITCH_SHADER_START:ANIMATION_57 class="absolute inset-0 w-full h-full opacity-40" -->
+<div class="absolute inset-0 w-full h-full opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_57" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_57');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Smooth, evolving noise for an editorial "paper-and-water" atmosphere
+    float noise = sin(uv.x * 2.5 + u_time * 0.1) * cos(uv.y * 3.0 + u_time * 0.12) * 0.15;
+    
+    // Interactive Water Ripple logic for the Journal focus
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 20.0 - u_time * 2.0) * exp(-distToMouse * 4.0) * 0.02;
+    
+    // Volumetric light blooms that move with the narrative flow
+    float d1 = distance(uv, vec2(0.1, 0.9) + 0.2 * vec2(sin(u_time * 0.05), cos(u_time * 0.07)));
+    float d2 = distance(uv, vec2(0.9, 0.1) + 0.2 * vec2(cos(u_time * 0.09), sin(u_time * 0.06)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.1, smoothstep(0.4, 0.0, distToMouse) * 0.25);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.012;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_57 -->
+</div>
+<!-- Hero Section -->
+<section class="min-h-screen relative flex items-center justify-center px-margin-mobile md:px-margin-desktop pt-32 pb-40 overflow-hidden">
+<div class="absolute inset-0 -z-10">
+<!-- STITCH_THREEJS_START:ANIMATION_58 class="w-full h-full" -->
+<div class="w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_58" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_58');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const container = document.getElementById('threejs-container-ANIMATION_JOURNAL');
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // Soft Studio Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x00f2ff, 1.2, 100);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+
+  const objects = [];
+
+  // Frosted Glass Nodes (Journal Articles)
+  const sphereGeo = new THREE.SphereGeometry(0.15, 32, 32);
+  const sphereMat = new THREE.MeshPhongMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.2, 
+    shininess: 100 
+  });
+  
+  for(let i = 0; i < 28; i++) {
+    const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+    sphere.position.set((Math.random()-0.5)*20, (Math.random()-0.5)*15, (Math.random()-0.5)*12);
+    scene.add(sphere);
+    objects.push({ 
+      mesh: sphere, 
+      speed: 0.001 + Math.random()*0.003, 
+      phase: Math.random() * Math.PI * 2 
+    });
+  }
+
+  // Metallic Rings (Precision & Narrative)
+  const ringGeo = new THREE.TorusGeometry(4.5, 0.009, 16, 100);
+  const ringMat = new THREE.MeshPhongMaterial({ color: 0x111111, transparent: true, opacity: 0.07 });
+  
+  for(let i = 0; i < 5; i++) {
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.set((Math.random()-0.5)*18, (Math.random()-0.5)*12, -8);
+    ring.rotation.set(Math.random()*Math.PI, Math.random()*Math.PI, 0);
+    scene.add(ring);
+    objects.push({ mesh: ring, speed: 0.0006 + Math.random()*0.0012 });
+  }
+
+  camera.position.z = 15;
+
+  const mouse = new THREE.Vector2();
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    objects.forEach(obj => {
+      obj.mesh.rotation.x += obj.speed;
+      obj.mesh.rotation.y += obj.speed * 0.5;
+      if(obj.phase !== undefined) {
+        obj.mesh.position.y += Math.sin(Date.now() * 0.0005 + obj.phase) * 0.006;
+      }
+    });
+    
+    scene.rotation.y += (mouse.x * 0.05 - scene.rotation.y) * 0.02;
+    scene.rotation.x += (-mouse.y * 0.05 - scene.rotation.x) * 0.02;
+    
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_58 -->
+</div>
+<div class="container-max grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10">
+<div class="md:col-span-8 flex flex-col items-start gap-8">
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed/30 px-4 py-1 rounded-full uppercase">Editorial Issue 04</span>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-primary leading-[0.9] tracking-tighter max-w-4xl">
+                        Stories That Inspire <br/><span class="text-on-surface-variant/40">Better Hydration.</span>
+</h1>
+</div>
+<div class="md:col-span-4 relative flex justify-center">
+<div class="animate-float relative">
+<img alt="Flagship Aura Bottle" class="w-full max-w-[400px] object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+<!-- Decorative floating objects -->
+<div class="absolute -top-10 -right-10 w-24 h-24 glass-frost rounded-full animate-float" style="animation-delay: -2s"></div>
+<div class="absolute bottom-20 -left-16 w-12 h-12 border-2 border-primary/20 rounded-full animate-float" style="animation-delay: -4s"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Topic Filter Rail -->
+<section class="py-12 border-y border-white/10 bg-white/5 backdrop-blur-md sticky top-20 z-40">
+<div class="flex justify-center gap-12 overflow-x-auto no-scrollbar px-margin-mobile whitespace-nowrap">
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-primary magnetic-hover">Health</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/60 hover:text-primary magnetic-hover">Environment</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/60 hover:text-primary magnetic-hover">Design</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/60 hover:text-primary magnetic-hover">Performance</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/60 hover:text-primary magnetic-hover">Wellness</button>
+</div>
+</section>
+<!-- Featured Story -->
+<section class="min-h-screen flex items-center bg-white relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A macro cinematic shot of crystal clear water droplets splashing against a sleek matte black stainless steel surface. The lighting is high-contrast, showcasing the liquid's purity and the bottle's premium texture. Subtle electric blue light refractions dance through the water, creating a serene and sophisticated wellness atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFLnI91xmVwVfD6f-vJQ1kkGDLlWFbvW25dlPDJPrAK5xcj9RfAS0_9Bumm3eiUFkyo9E_P10QT4nwHYiSfeyH1sZwAfx-EQtq2KKQj-uviQ61fAYPgqnDunLiAZeneZT01AGC9JbY0xale2mPgQk29WaSp2UVGR0JED5CD0dLxIA0Pjl8Rbq2OTyiyAJvNUVgdg7jFZFw_6dMUncWAOPyNoWXi8quY8L2pes4x7G9KGjN0AdatNor')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-white flex flex-col gap-8">
+<div class="flex items-center gap-6">
+<span class="glass-frost px-6 py-2 rounded-full font-label-sm text-label-sm text-white border-white/20">Wellness</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase opacity-80">5 MIN READ</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg max-w-2xl leading-tight">
+                    How Much Water Should You Drink Every Day? <br/><span class="text-white/40 italic">The Science of Cellular Vitality.</span>
+</h2>
+<a class="inline-flex items-center gap-4 group/btn" href="#">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Read Article</span>
+<span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Editorial Story Panels (Broken Grid) -->
+<section class="py-40 px-margin-mobile md:px-margin-desktop container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-32 gap-x-gutter">
+<!-- Story 1: Stainless Steel -->
+<article class="md:col-span-7 group cursor-pointer relative" data-aos="fade-up">
+<div class="relative overflow-hidden aspect-[4/5] md:aspect-[16/10] mb-12">
+<img alt="Stainless Steel Anatomy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+<div class="absolute top-8 left-8 glass-frost p-8 max-w-xs transition-all duration-500 group-hover:translate-x-2 group-hover:-translate-y-2">
+<span class="font-label-sm text-label-sm text-primary mb-4 block uppercase tracking-widest">Material Study</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6">Benefits of Stainless Steel Bottles</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Beyond durability. Exploring the temperature-lock technology that preserves purity for 24 hours.</p>
+</div>
+</div>
+</article>
+<!-- Story 2: Proper Cleaning -->
+<article class="md:col-start-9 md:col-span-4 self-center group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+<div class="glass-frost p-12 relative z-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-4 border-l-4 border-primary">
+<span class="font-label-sm text-label-sm text-secondary mb-6 block uppercase tracking-widest">Maintenance</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-8 leading-tight">How to Clean Your Bottle Properly</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12">A step-by-step guide to maintaining antimicrobial integrity and ensuring a lifelong companion.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase opacity-40 tracking-widest">3 MIN READ</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_outward</span>
+</div>
+</div>
+<div class="mt-8 overflow-hidden aspect-square">
+<div class="w-full h-full bg-surface-container-high transition-transform duration-1000 group-hover:scale-110" data-alt="A minimalist overhead shot of a stainless steel bottle brush and organic cleaning solution on a white marble surface. The lighting is bright and clean, emphasizing a surgical and pure aesthetic. Soft shadows and a 1px thin glass overlay create a layered, luxury design feel consistent with the AURA brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDUOtDmGvLWbt_-sEabL3OCYljswjs06Zbs5C7006uYDAmo9adxsOhY9UMBxlxnwBBLZpg8kJtL6u0EkmTQZiNytpAj2r85li7o6vaF-oOXF5SVRm4mch-zGffKRbxsF6DXxk_duGStCdjTf1z03V0co_-QLECI-_4d2VSFF9jnXpPajmYqN6C8xFhrSRRt9K0MykEwXVTEi3bu1nJA6VfCB-WPw4gFkDQjCyjy1NP0ZWpupGqEadB')"></div>
+</div>
+</article>
+<!-- Story 3: Plastic vs Stainless -->
+<article class="md:col-start-2 md:col-span-10 group cursor-pointer mt-20" data-aos="fade-up">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden rounded-xl border border-white/20">
+<div class="bg-primary p-20 flex flex-col justify-between text-on-primary">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] mb-12 block text-secondary-container">The Impact</span>
+<h3 class="font-display-xl-mobile text-display-xl-mobile leading-none mb-12">Plastic vs <br/>Stainless Steel</h3>
+</div>
+<div class="flex flex-col gap-4">
+<div class="h-[1px] w-full bg-white/20"></div>
+<p class="font-body-lg text-body-lg text-on-primary-container">An investigative look at the microplastic epidemic and the structural solution of AURA.</p>
+<button class="mt-8 border border-white/20 px-8 py-4 rounded-full font-label-sm text-label-sm uppercase hover:bg-white hover:text-primary transition-all">Read Investigation</button>
+</div>
+</div>
+<div class="relative min-h-[400px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110" data-alt="An artistic comparison shot between a crushed, low-quality plastic bottle and a pristine, matte black AURA stainless steel bottle. The setting is a minimalist industrial space with dramatic chiaroscuro lighting. The contrast emphasizes environmental waste versus sustainable luxury, rendered in a crisp, editorial photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8kIvVjBpp5VQm3YFWPc0mSEVcrTeYsx3HJ5LbYMrj08UKewd1vBsH0EiY3-RWBoRUZfrB4RLDwdtjOjjuPq9n7QzCBhX1XH1SmwQiBGbhFUdiEJXzHeG_r8pmjrS-TK_ibiWksf4j7T_8aV6jd37sRPdzjYbWNpUQF3n2Onr2LD5BUZOcmH4Fm6ht5X-BoXHDblBVDZljri_lBPKNneJXMW7uFIu0hYRZYy05XLf1i9nXmojUdqx5')"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-40 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
+<div class="container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-20 relative z-10">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Never Miss A Story</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Join 50,000+ hydration enthusiasts receiving our weekly dispatch on wellness, design, and environmental innovation.</p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-grow bg-white border-b-2 border-primary/10 focus:border-primary p-4 outline-none font-body-md text-body-md transition-all" placeholder="email@address.com" type="email"/>
+<button class="bg-primary text-on-primary px-12 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:scale-105 transition-transform">Subscribe</button>
+</form>
+</div>
+<div class="hidden lg:block relative group">
+<div class="absolute -inset-10 glass-frost rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+<img alt="Aura Bottle" class="w-64 rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full overflow-hidden flex flex-col w-full px-margin-mobile md:px-margin-desktop py-40 gap-32 bg-surface dark:bg-primary">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter w-full">
+<div class="md:col-span-6">
+<div class="font-display-xl text-primary leading-none mb-12">AURA</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm">Designing the future of hydration through the lens of minimalism and liquid purity.</p>
+</div>
+<div class="md:col-span-6 grid grid-cols-2 md:grid-cols-4 gap-12 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+<div class="flex flex-col gap-6">
+<a class="hover:scale-105 transition-transform duration-700 ease-out text-primary underline" href="#">Privacy</a>
+<a class="hover:scale-105 transition-transform duration-700 ease-out" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-6">
+<a class="hover:scale-105 transition-transform duration-700 ease-out" href="#">Sustainability</a>
+<a class="hover:scale-105 transition-transform duration-700 ease-out" href="#">Press</a>
+</div>
+<div class="md:col-span-2 flex flex-col gap-6 md:items-end">
+<div class="flex gap-8">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors">eco</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors">water_drop</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full flex flex-col md:flex-row justify-between items-center border-t border-black/5 pt-12">
+<p class="font-label-sm text-label-sm text-on-surface-variant/40 tracking-widest">© 2024 AURA LIQUID PURITY. ALL RIGHTS RESERVED.</p>
+<div class="font-display-xl text-display-xl-mobile md:text-display-xl font-bold leading-none text-primary/5 uppercase pointer-events-none select-none">PUREFORM</div>
+</div>
+</footer>
+<script>
+        // Reading Progress Indicator Logic
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            scrollProgress.style.height = progress + '%';
+        });
+
+        // Magnetic Hover Effect Enhancement
+        const magneticElements = document.querySelectorAll('.magnetic-hover');
+        magneticElements.forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translate(0, 0) scale(1)';
+            });
+        });
+
+        // Simple Intersection Observer for Fade In
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-aos="fade-up"]').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000', 'ease-out');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

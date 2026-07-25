@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA | Engineering Purity</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454749",
+                        "surface": "#f9f9f9",
+                        "outline": "#747878",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c8c6c5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-container": "#1a1c1d",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary-container": "#004d6a",
+                        "secondary-fixed-dim": "#7cd0ff",
+                        "tertiary": "#000000",
+                        "tertiary-fixed": "#e2e2e4",
+                        "secondary-fixed": "#c4e7ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#858383",
+                        "on-tertiary-fixed": "#1a1c1d",
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#000000",
+                        "inverse-surface": "#2f3131",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#838486",
+                        "on-surface": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c8",
+                        "secondary": "#00668a",
+                        "on-background": "#1a1c1c",
+                        "background": "#f9f9f9",
+                        "inverse-on-surface": "#f0f1f1",
+                        "outline-variant": "#c4c7c7",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-container": "#40c2fd",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-container": "#1c1b1b",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#444748",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#001e2c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-xl-mobile": ["Plus Jakarta Sans"],
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.glass-frost {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5)
+    }
+.magnetic-hover {
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)
+    }
+.magnetic-hover:hover {
+    transform: scale(1.05) translatey(-2px)
+    }
+.floating-bottle {
+    animation: float 8s ease-in-out infinite
+    }
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        } 50% {
+        transform: translateY(-30px) rotate(2deg);
+        }
+    }
+.noise-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAyVMFTUqh5QcziikvOA2951HEq_EzD_KwTPPnj_8x7Jl4fYRGXpDn9Nbz_ZGKgP3ngQzbeuLM2_LLfrjGI2NhbevRL-oelidy2HLrFIuFdQAJ9R5gRH8JgnniIK5sWmaxIj-9W74lb1md4QWpPhc8UTGwquEhQxJgC5mfpNp8jslHizbGXecph-ArrxIMJDxH5pVblJymwfnvgWsOi1kJH2Hqs75Yt6l0Io1Y5MKOY4tkJDaU4Ugwt);
+    filter: contrast(170%) brightness(1000%);
+    opacity: 0.04
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-center items-center w-full px-margin-desktop">
+<nav class="bg-white/40 dark:bg-black/40 backdrop-blur-xl rounded-full mt-6 mx-auto w-fit px-8 py-3 border border-white/50 dark:border-outline/30 shadow-2xl shadow-black/5 flex items-center gap-10">
+<span class="font-display-xl text-[24px] tracking-widest text-primary dark:text-on-primary">AURA</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-tertiary-fixed-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="#">Shop</a>
+<a class="text-on-tertiary-fixed-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="#">Craftsmanship</a>
+<a class="text-on-tertiary-fixed-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="#">Science</a>
+<a class="text-on-tertiary-fixed-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="#">Sustainability</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary dark:text-on-primary hover:scale-110 transition-transform">shopping_bag</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm uppercase hover:scale-105 transition-transform duration-500 ease-out">
+                    Shop Now
+                </button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Cinematic Hero/CTA Section -->
+<section class="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden py-40">
+<!-- Animated Shader Background -->
+
+<!-- Atmospheric Noise Overlay -->
+<div class="absolute inset-0 z-0 pointer-events-none noise-texture"></div>
+<!-- Three.js Decorative Layer -->
+
+<!-- Floating Content -->
+<div class="relative z-20 container max-w-container-max mx-auto px-margin-desktop flex flex-col items-center text-center">
+<div class="mb-12 relative group cursor-pointer w-full max-w-2xl">
+<img class="w-full h-auto object-contain floating-bottle drop-shadow-[0_35px_60px_-15px_rgba(0,0,0,0.1)] transition-transform duration-1000 group-hover:scale-105" data-alt="A hyper-realistic 3D render of a matte charcoal AURA hydration bottle suspended in mid-air. The bottle is surrounded by hyper-realistic floating water spheres and translucent glass rings that refract soft cyan and aqua lighting. The atmosphere is minimalist and premium, with a high-key soft white background and subtle condensation droplets on the bottle's surface. The lighting creates elegant highlights along the metallic cap and the embossed AURA logo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWRD5XlgyFcBtbRkK3DM-jxvcBNnjA4ZLHop_rV5UVzSvgc8YouCGmb8U5bQqcKwjtvZ1bDVMCJPb_GaWP7WMUN5hHWgi5eiyKToWatdgdXHsJ8j0NsAuo1Z7tK01tqRLUnEepW7RLMvhVD7H4V-5tkOZUlBdGEmRgbO85JOhvFNIvezQQJ0itEVhqP_zzjdvp0AlicVJB_D61U7r8-y6nuM_lPohTI0Jjf3_q-yketj1_caICRfvv"/>
+</div>
+<div class="max-w-4xl space-y-8" id="reveal-content">
+<h1 class="font-display-xl text-display-xl md:text-display-xl mobile:text-display-xl-mobile text-primary tracking-tight leading-none opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                        Stay Hydrated <br/> <span class="text-secondary italic">Everywhere.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out">
+                        Engineered for molecular purity. Our signature matte charcoal finish meets aerospace-grade thermal insulation for a sensory experience that redefines the essence of water.
+                    </p>
+<div class="pt-10 opacity-0 translate-y-10 transition-all duration-1000 delay-500 ease-out">
+<button class="magnetic-hover glass-frost px-12 py-5 rounded-full font-label-sm text-label-sm uppercase tracking-widest text-primary hover:bg-white hover:border-transparent transition-all shadow-xl shadow-black/5">
+                            Shop Collection
+                        </button>
+</div>
+</div>
+</div>
+<!-- Decorative Floating Label -->
+<div class="absolute bottom-20 left-margin-desktop hidden lg:block opacity-30">
+<span class="font-label-sm text-label-sm uppercase rotate-90 origin-left inline-block tracking-widest">
+                    Liquid Precision — v.2024
+                </span>
+</div>
+</section>
+<!-- Product Features (Bento Style) -->
+<section class="py-40 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Feature 1 -->
+<div class="md:col-span-8 h-[600px] relative overflow-hidden rounded-3xl group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="A cinematic, extreme close-up shot of the AURA water bottle's matte surface covered in delicate, crisp water droplets. The lighting is cold and atmospheric, emphasizing the texture of the charcoal finish and the crystalline clarity of the droplets. Soft aqua light blooms illuminate the edges, creating a high-end industrial design aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUSZEoWaPneIPgGOfjleTwNcTf-Oa4E48TARyE5L-uZxP3lCJYeZAYtNlmIQ1BOE30ftN4uvTZLpbdsvdtrwPtS11onqUcYbD0gbQWKk3fhrZJHg0k1J01a2Q62VeniCQOd_TjnkSCCYUmTZ6w15THpTTNNIb06oZEKc62iQ7nTDxbYllBvch70isst4ERUd2OXHA1JsB2E71WA6Qft2pLfwu8rZH9T4IbncM3_1ho2Pf7yChwM_-Z')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-12 left-12 text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-widest bg-white/20 backdrop-blur-md px-4 py-1 rounded-full mb-4 inline-block">Molecular Coating</span>
+<h3 class="font-headline-lg text-headline-lg">Anti-Bacterial Texture</h3>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-4 h-[600px] flex flex-col gap-gutter">
+<div class="flex-1 bg-white rounded-3xl p-10 flex flex-col justify-center border border-outline-variant hover:border-secondary transition-colors group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 group-hover:rotate-12 transition-transform">ac_unit</span>
+<h4 class="font-headline-lg text-headline-lg text-primary mb-4">48H Cold</h4>
+<p class="text-on-surface-variant font-body-md">Triple-walled vacuum insulation keeps your essence chilled through any journey.</p>
+</div>
+<div class="flex-1 glass-frost rounded-3xl p-10 flex flex-col justify-center border border-outline-variant hover:shadow-2xl transition-all">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">eco</span>
+<h4 class="font-headline-lg text-headline-lg text-primary mb-4">Zero Plastic</h4>
+<p class="text-on-surface-variant font-body-md">Sustainably sourced medical-grade steel. Built for a lifetime of purity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-10 bg-surface dark:bg-tertiary-container overflow-hidden">
+<div class="w-full max-w-container-max mx-auto px-margin-desktop flex flex-col items-center gap-10">
+<div class="w-full flex flex-col md:flex-row justify-between items-start gap-12 border-b border-outline/10 pb-20">
+<div class="max-w-sm">
+<span class="font-display-xl text-[32px] tracking-widest text-primary dark:text-on-primary mb-6 block">AURA</span>
+<p class="text-on-tertiary-container dark:text-on-tertiary-fixed-variant font-body-md">
+                        Redefining the relationship between human biology and technological precision. Engineered for those who demand absolute purity.
+                    </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Experience</span>
+<a class="text-on-tertiary-container hover:text-secondary transition-colors font-body-md" href="#">Shop</a>
+<a class="text-on-tertiary-container hover:text-secondary transition-colors font-body-md" href="#">Science</a>
+<a class="text-on-tertiary-container hover:text-secondary transition-colors font-body-md" href="#">Labs</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Support</span>
+<a class="text-on-tertiary-container hover:text-secondary transition-colors font-body-md" href="#">Shipping</a>
+<a class="text-on-tertiary-container hover:text-secondary transition-colors font-body-md" href="#">Warranty</a>
+<a class="text-on-tertiary-container hover:text-secondary transition-colors font-body-md" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Legal</span>
+<a class="text-on-tertiary-container hover:text-secondary transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-tertiary-container hover:text-secondary transition-colors font-body-md" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-6">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Connect</span>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-sm">public</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-sm">share</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="relative w-full text-center">
+<span class="font-display-xl text-display-xl text-primary dark:text-on-primary opacity-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none uppercase">AURA HYDRATION</span>
+<p class="font-label-sm text-label-sm text-on-tertiary-container dark:text-on-tertiary-fixed-variant py-10 relative z-10">
+                    © 2024 AURA HYDRATION. ENGINEERED FOR PURITY.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        // Reveal animation logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const children = entry.target.querySelectorAll('h1, p, div');
+                        children.forEach((child, index) => {
+                            setTimeout(() => {
+                                child.style.opacity = '1';
+                                child.style.transform = 'translateY(0)';
+                            }, index * 200);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            const content = document.querySelector('#reveal-content');
+            if (content) observer.observe(content);
+
+            // Magnetic Button Logic
+            const btn = document.querySelector('.magnetic-hover');
+            if (btn) {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0, 0) scale(1)';
+                });
+            }
+
+            // Scroll Parallax for Hero
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const bottle = document.querySelector('.floating-bottle');
+                if (bottle) {
+                    bottle.style.transform = `translateY(${scrolled * 0.15}px) rotate(${scrolled * 0.02}deg)`;
+                }
+            });
+        });
+    </script>
+</body></html>

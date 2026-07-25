@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA | Our Philosophy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "primary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#7cd0ff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary-container": "#858383",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "on-background": "#1a1c1c",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary-fixed": "#1a1c1d",
+                        "background": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e2e2e4",
+                        "surface": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "surface-bright": "#f9f9f9",
+                        "outline-variant": "#c4c7c7",
+                        "on-tertiary-container": "#838486",
+                        "surface-container-low": "#f3f3f4",
+                        "on-tertiary-fixed-variant": "#454749",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-container": "#1c1b1b",
+                        "outline": "#747878",
+                        "secondary-fixed": "#c4e7ff",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary": "#000000",
+                        "on-surface-variant": "#444748",
+                        "surface-dim": "#dadada",
+                        "secondary-container": "#40c2fd",
+                        "on-secondary-container": "#004d6a",
+                        "tertiary-fixed-dim": "#c6c6c8",
+                        "secondary": "#00668a",
+                        "tertiary-container": "#1a1c1d",
+                        "on-surface": "#1a1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#001e2c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "display-xl-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            cursor: none;
+            overflow-x: hidden;
+        }
+        .glass-frost {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease-out, background 0.3s ease;
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .magnetic-hover {
+            transition: transform 0.3s ease;
+        }
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .bottle-rotate {
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background">
+<div class="custom-cursor" id="cursor"></div>
+<div class="noise-overlay"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full z-50 bg-surface/40 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="font-display-xl-mobile text-display-xl-mobile font-bold text-primary tracking-tighter uppercase">AURA</div>
+<div class="hidden md:flex gap-gutter">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Shop</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary font-bold border-b border-primary hover:opacity-70 transition-opacity duration-500" href="#">Philosophy</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Archive</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:opacity-70 transition-opacity duration-500" href="#">Atelier</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm uppercase tracking-widest hover:scale-105 transition-transform duration-300">Boutique</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+<!-- STITCH_SHADER_START:ANIMATION_48 class="absolute inset-0 w-full h-full opacity-40" -->
+<div class="absolute inset-0 w-full h-full opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_48" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_48');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Create soft, undulating liquid motion for an "editorial documentary" feel
+    float noise = sin(uv.x * 2.5 + u_time * 0.1) * cos(uv.y * 2.5 + u_time * 0.12) * 0.15;
+    
+    // Interactive Water Ripple logic
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 15.0 - u_time * 1.5) * exp(-distToMouse * 3.0) * 0.02;
+    
+    // Volumetric light blooms that move with the narrative flow
+    float d1 = distance(uv, vec2(0.1, 0.9) + 0.2 * vec2(sin(u_time * 0.05), cos(u_time * 0.07)));
+    float d2 = distance(uv, vec2(0.9, 0.1) + 0.2 * vec2(cos(u_time * 0.09), sin(u_time * 0.06)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.05, smoothstep(0.5, 0.0, distToMouse) * 0.25);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.01;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_48 -->
+<!-- STITCH_THREEJS_START:ANIMATION_49 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_49" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_49');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  (function() {
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // Soft Studio Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x00f2ff, 1.2, 100);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+
+  const objects = [];
+
+  // Frosted Glass Spheres (Abstract brand thoughts)
+  const sphereGeo = new THREE.SphereGeometry(0.15, 32, 32);
+  const sphereMat = new THREE.MeshPhongMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.2, 
+    shininess: 100 
+  });
+  
+  for(let i = 0; i < 30; i++) {
+    const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+    sphere.position.set((Math.random()-0.5)*20, (Math.random()-0.5)*15, (Math.random()-0.5)*10);
+    scene.add(sphere);
+    objects.push({ 
+      mesh: sphere, 
+      speed: 0.001 + Math.random()*0.003, 
+      phase: Math.random() * Math.PI * 2 
+    });
+  }
+
+  // Metallic Rings (Precision/Engineering)
+  const ringGeo = new THREE.TorusGeometry(4, 0.008, 16, 100);
+  const ringMat = new THREE.MeshPhongMaterial({ color: 0x111111, transparent: true, opacity: 0.08 });
+  
+  for(let i = 0; i < 5; i++) {
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.set((Math.random()-0.5)*18, (Math.random()-0.5)*12, -6);
+    ring.rotation.set(Math.random()*Math.PI, Math.random()*Math.PI, 0);
+    scene.add(ring);
+    objects.push({ mesh: ring, speed: 0.0005 + Math.random()*0.001 });
+  }
+
+  camera.position.z = 15;
+
+  const mouse = new THREE.Vector2();
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    objects.forEach(obj => {
+      obj.mesh.rotation.x += obj.speed;
+      obj.mesh.rotation.y += obj.speed * 0.5;
+      if(obj.phase !== undefined) {
+        obj.mesh.position.y += Math.sin(Date.now() * 0.0004 + obj.phase) * 0.006;
+      }
+    });
+    
+    scene.rotation.y += (mouse.x * 0.06 - scene.rotation.y) * 0.02;
+    scene.rotation.x += (-mouse.y * 0.06 - scene.rotation.x) * 0.02;
+    
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_49 -->
+<div class="relative z-10 text-center space-y-8">
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl leading-none reveal-up">Crafted for Every<br/><span class="text-secondary-container">Journey.</span></h1>
+<div class="relative w-64 md:w-96 mx-auto perspective-1000">
+<img class="w-full h-auto bottle-rotate drop-shadow-2xl reveal-up" id="hero-bottle" src="https://lh3.googleusercontent.com/aida/AP1WRLv_2Bd5p_10tzfGgDmWTBlto5BV92zYrtBJQ0W85IXCRln3tf_E3yl4bIZ1VmM3ga4gSBILYUeKF4XVdYKhgSvxx0Kf0EVK7G7zc3vMwYg_ahrkuKELQIcOubBCMT8zxBfwPZHGvVEM977NthIDMpBgpf-DD49N_VVwxSiYjhjxOmHLBEHn6Ky9Hq1QNqlgxNkNKX02nIj0wkGBYFOIt6RFPrTrOGOYDAZwb1CPUAoyuOPHUfOsIUnnpIU" style="transition-delay: 0.2s;"/>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+<span class="font-label-sm uppercase tracking-tighter">Scroll to Explore</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</section>
+<!-- Chapter 01: The Idea -->
+<section class="relative min-h-screen py-40 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 space-y-12">
+<span class="font-label-sm text-secondary tracking-[0.3em] uppercase">Chapter 01</span>
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl-mobile lg:text-headline-lg font-bold reveal-up">Every Great Journey Starts With One Simple Idea.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md reveal-up">Aura was born from a singular obsession: Why must the objects we carry be purely functional? We envisioned a vessel that bridged the gap between high-end industrial sculpture and human necessity.</p>
+</div>
+<div class="md:col-span-7 relative">
+<div class="relative w-full aspect-[4/5] glass-frost rounded-xl overflow-hidden reveal-up">
+<div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-80" data-alt="A cinematic, high-contrast black and white editorial photograph of a minimalist product design sketch. The sketch features smooth, fluid curves and is laid out on a pristine glass table in a bright, modern studio. Soft light diffuses through frosted windows, creating a peaceful and focused creative atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBojiepRzkNpaRFpnVZkNThVqKcndRME7hVT0XQ0hVgYeT1z1EF7cdkKnBH2fvx15C3rJBePuTyCUr7uH0-UPvPqxC6UoFlwBLUcR1X9RqW9yE1Wg7x6FwWpmx_LuTsnPt6YHIDEuE6frQ6LVUHVtndDOyj_rXBh-phgde4rlhswa4IJzluAyHxyj01Ju_vLWPb9bbpIcLYbcnP1sheKkwqORk1716lI1kFXR_xb114SplsRGbxWFzH')"></div>
+<div class="absolute inset-0 flex items-center justify-center p-20">
+<div class="text-center">
+<span class="font-display-xl text-primary/10 select-none">Purity.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Chapter 02: Purpose -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+<div class="absolute inset-0 opacity-10">
+<!-- STITCH_SHADER_START:ANIMATION_48 class="w-full h-full" -->
+<div class="w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_48" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_48');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Create soft, undulating liquid motion for an "editorial documentary" feel
+    float noise = sin(uv.x * 2.5 + u_time * 0.1) * cos(uv.y * 2.5 + u_time * 0.12) * 0.15;
+    
+    // Interactive Water Ripple logic
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 15.0 - u_time * 1.5) * exp(-distToMouse * 3.0) * 0.02;
+    
+    // Volumetric light blooms that move with the narrative flow
+    float d1 = distance(uv, vec2(0.1, 0.9) + 0.2 * vec2(sin(u_time * 0.05), cos(u_time * 0.07)));
+    float d2 = distance(uv, vec2(0.9, 0.1) + 0.2 * vec2(cos(u_time * 0.09), sin(u_time * 0.06)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.05, smoothstep(0.5, 0.0, distToMouse) * 0.25);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.01;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_48 -->
+</div>
+<div class="relative z-10 max-w-4xl text-center px-margin-mobile reveal-up">
+<span class="font-label-sm text-secondary tracking-[0.3em] uppercase block mb-8">Chapter 02</span>
+<div class="glass-frost p-12 md:p-24 rounded-3xl relative">
+<div class="absolute -top-12 -left-12 w-24 h-24 border-t-2 border-l-2 border-primary/20"></div>
+<div class="absolute -bottom-12 -right-12 w-24 h-24 border-b-2 border-r-2 border-primary/20"></div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-12 italic">"Designed With Purpose."</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">We don't just build bottles; we engineer experiences. Every curve is calculated for ergonomics, every material chosen for its sensory feedback. Our mission is to create a physical anchor in a digital world—a tactile reminder to stay fluid, stay pure.</p>
+</div>
+</div>
+</section>
+<!-- Chapter 03: Sustainability -->
+<section class="relative min-h-screen py-40 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-32 items-center">
+<div class="order-2 md:order-1 relative h-[600px]">
+<div class="absolute inset-0 rounded-full bg-secondary-container/5 blur-[120px]"></div>
+<!-- Interactive Droplets Visualization Area -->
+<div class="absolute inset-0 flex items-center justify-center">
+<!-- STITCH_SHADER_START:ANIMATION_48 class="w-full h-full" -->
+<div class="w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_48" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_48');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Create soft, undulating liquid motion for an "editorial documentary" feel
+    float noise = sin(uv.x * 2.5 + u_time * 0.1) * cos(uv.y * 2.5 + u_time * 0.12) * 0.15;
+    
+    // Interactive Water Ripple logic
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 15.0 - u_time * 1.5) * exp(-distToMouse * 3.0) * 0.02;
+    
+    // Volumetric light blooms that move with the narrative flow
+    float d1 = distance(uv, vec2(0.1, 0.9) + 0.2 * vec2(sin(u_time * 0.05), cos(u_time * 0.07)));
+    float d2 = distance(uv, vec2(0.9, 0.1) + 0.2 * vec2(cos(u_time * 0.09), sin(u_time * 0.06)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.05, smoothstep(0.5, 0.0, distToMouse) * 0.25);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.01;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_48 -->
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-12">
+<span class="font-label-sm text-secondary tracking-[0.3em] uppercase">Chapter 03</span>
+<h2 class="font-display-xl text-display-xl-mobile md:text-headline-lg font-bold reveal-up">Small Choices. Lasting Impact.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant reveal-up">Sustainability is not a marketing pillar; it is our foundation. By replacing single-use plastic fragments with infinite glass and titanium, we are not just saving the planet—we are elevating the ritual of hydration to a lasting art form.</p>
+<div class="grid grid-cols-2 gap-8 reveal-up">
+<div class="space-y-2">
+<span class="font-headline-lg text-primary block">100%</span>
+<span class="font-label-sm uppercase text-on-surface-variant">Infinite Recyclable</span>
+</div>
+<div class="space-y-2">
+<span class="font-headline-lg text-primary block">0.0</span>
+<span class="font-label-sm uppercase text-on-surface-variant">BPA / Toxins</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Chapter 04: Craftsmanship (Exploded View) -->
+<section class="relative min-h-screen py-40 bg-primary text-on-primary overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop mb-24 text-center">
+<span class="font-label-sm text-secondary-fixed-dim tracking-[0.3em] uppercase">Chapter 04</span>
+<h2 class="font-display-xl text-display-xl-mobile md:text-headline-lg font-bold mt-4">Crafted Without Compromise.</h2>
+</div>
+<div class="relative h-[800px] flex items-center justify-center">
+<!-- Simulated Exploded View -->
+<div class="relative w-full max-w-lg">
+<!-- Top Cap -->
+<div class="absolute left-1/2 -translate-x-1/2 -top-40 reveal-up" style="transition-delay: 0.1s;">
+<img class="w-32 h-auto opacity-80" data-alt="A close-up high-resolution shot of a brushed titanium bottle cap, showing incredible metallic detail and light refraction. The aesthetic is industrial yet luxurious, with a soft cool-toned studio lighting setup against a dark gray background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ZphSncVNOj3ENodjhBlfDn0FAmcMmlCCCyOefW0i4WJSSELflnZhp9beFPxdJkRCZwhohXAm34Dk2Ztz3kFB6YsZCtyz6ULVkYhYfUfpbHXebIWVyjm1rpSylfirjQjfucGkcntqAO-EJKpbLG_7oQjJZNo3DlKR8JbkLlA3EP5xoELUwNBV7EZT5HwtMmaxlfoADmSy_j3eJH5jTLhN9QJ0FRlf_qvp-iCwfLVpe1qNYAGE1kMv"/>
+<div class="absolute left-40 top-1/2 w-48 h-px bg-white/20"></div>
+<div class="absolute left-96 top-1/2 -translate-y-1/2 font-label-sm uppercase whitespace-nowrap">Precision Seal</div>
+</div>
+<!-- Glass Core -->
+<div class="absolute left-1/2 -translate-x-1/2 top-0 reveal-up" style="transition-delay: 0.3s;">
+<img class="w-48 h-auto opacity-90" data-alt="A macro shot of a hand-blown thick glass bottle neck, perfectly transparent with subtle internal light reflections. The glass appears heavy and high-quality, captured in a minimalist light-mode environment with soft ambient occlusion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7cixzv7tAanKZ1rYdPBhOohaVx0OIbCQ8TuGf4V7Gw-pOgyNe9na0AXhoTX7HrDXo8DeEqiOdIOP1fgj3ltPFtRuCTQ5ZPi1kXbXJaSLxv_w9kDA9JfdbPfqEo9EdiKu4TDQy2ck0QVKl3laiqZT9sEfkwg_nuYVTitr7jmoxa0PowpfTImWrgWGRYDbhc2zYh4cfsnVWKU90SGk-YClC0WFBYGaZ6jpJlI8KG-w7UnXgXm33efpJ"/>
+<div class="absolute right-56 top-1/2 w-48 h-px bg-white/20"></div>
+<div class="absolute right-[440px] top-1/2 -translate-y-1/2 font-label-sm uppercase whitespace-nowrap text-right">Borosilicate Core</div>
+</div>
+<!-- Main Body -->
+<div class="absolute left-1/2 -translate-x-1/2 top-60 reveal-up" style="transition-delay: 0.5s;">
+<img class="w-64 h-auto" data-alt="The main body of a matte black water bottle with a velvety finish. The lighting is dramatic, highlighting the sleek silhouette and the subtle 'AURA' logo engraved near the base. The style is premium tech-noir." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_-HltDGr3fBRWFeZA7mST60DWFZmBN8K47asj8JGJvlB38bXsyAQ-I4Iz1ecE2njr12Bo5nblUeNqrrEksuJH7NcKjtGzPpbzzCvFx1tUdhNksml1-Sc_vwzx8SqUxiLtlMsqrv1vbJYC0q1uf_51XeNMAXfbORlds72fXPtxz_CCzKMsm9iP0kIBzcP8jrVKf0MU4FiTviGSYENwvet8tXcPf6tOszhp75lAcZ4AHhV4VO5hYpgq"/>
+<div class="absolute left-72 bottom-20 w-48 h-px bg-white/20"></div>
+<div class="absolute left-[540px] bottom-20 -translate-y-1/2 font-label-sm uppercase whitespace-nowrap">Titanium Shield</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Philosophy -->
+<section class="relative h-screen flex items-center justify-center px-margin-mobile overflow-hidden">
+<h2 class="font-display-xl text-[12vw] font-extrabold uppercase leading-[0.8] text-primary/5 absolute whitespace-nowrap select-none">Design That Lives With You</h2>
+<div class="relative z-10 text-center max-w-2xl reveal-up">
+<h3 class="font-headline-lg mb-8">Design That Lives With You.</h3>
+<p class="font-body-lg">Our philosophy is simple: perfection is achieved not when there is nothing left to add, but when there is nothing left to take away. Aura is the final distillation of form and function.</p>
+</div>
+</section>
+<!-- Brand Values Pillars -->
+<section class="py-40 px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="glass-frost p-12 aspect-square flex flex-col justify-end hover:scale-[1.02] transition-transform duration-500 reveal-up">
+<span class="font-label-sm text-secondary mb-4">01</span>
+<h4 class="font-headline-lg-mobile font-bold">Craftsmanship</h4>
+</div>
+<div class="glass-frost p-12 aspect-square flex flex-col justify-end hover:scale-[1.02] transition-transform duration-500 reveal-up" style="transition-delay: 0.1s;">
+<span class="font-label-sm text-secondary mb-4">02</span>
+<h4 class="font-headline-lg-mobile font-bold">Sustainability</h4>
+</div>
+<div class="glass-frost p-12 aspect-square flex flex-col justify-end hover:scale-[1.02] transition-transform duration-500 reveal-up" style="transition-delay: 0.2s;">
+<span class="font-label-sm text-secondary mb-4">03</span>
+<h4 class="font-headline-lg-mobile font-bold">Innovation</h4>
+</div>
+<div class="glass-frost p-12 aspect-square flex flex-col justify-end hover:scale-[1.02] transition-transform duration-500 reveal-up" style="transition-delay: 0.3s;">
+<span class="font-label-sm text-secondary mb-4">04</span>
+<h4 class="font-headline-lg-mobile font-bold">Simplicity</h4>
+</div>
+<div class="glass-frost p-12 aspect-square flex flex-col justify-end hover:scale-[1.02] transition-transform duration-500 reveal-up" style="transition-delay: 0.4s;">
+<span class="font-label-sm text-secondary mb-4">05</span>
+<h4 class="font-headline-lg-mobile font-bold">Longevity</h4>
+</div>
+<div class="glass-frost p-12 aspect-square flex flex-col justify-end hover:scale-[1.02] transition-transform duration-500 reveal-up" style="transition-delay: 0.5s;">
+<span class="font-label-sm text-secondary mb-4">06</span>
+<h4 class="font-headline-lg-mobile font-bold">Community</h4>
+</div>
+</div>
+</section>
+<!-- Final Section -->
+<section class="relative min-h-screen py-40 flex flex-col items-center justify-center overflow-hidden">
+<!-- STITCH_SHADER_START:ANIMATION_48 class="absolute inset-0 w-full h-full opacity-20" -->
+<div class="absolute inset-0 w-full h-full opacity-20" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_48" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_48');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // AURA Editorial Palette (Surface, Aqua Bloom, Deep Slate)
+    vec3 color1 = vec3(0.976, 0.976, 0.976); // #f9f9f9
+    vec3 color2 = vec3(0.855, 0.965, 0.984); // Aqua highlight
+    vec3 color3 = vec3(0.922, 0.922, 0.922); // Cool Gray
+    
+    // Create soft, undulating liquid motion for an "editorial documentary" feel
+    float noise = sin(uv.x * 2.5 + u_time * 0.1) * cos(uv.y * 2.5 + u_time * 0.12) * 0.15;
+    
+    // Interactive Water Ripple logic
+    float distToMouse = distance(uv, m);
+    float ripple = sin(distToMouse * 15.0 - u_time * 1.5) * exp(-distToMouse * 3.0) * 0.02;
+    
+    // Volumetric light blooms that move with the narrative flow
+    float d1 = distance(uv, vec2(0.1, 0.9) + 0.2 * vec2(sin(u_time * 0.05), cos(u_time * 0.07)));
+    float d2 = distance(uv, vec2(0.9, 0.1) + 0.2 * vec2(cos(u_time * 0.09), sin(u_time * 0.06)));
+    
+    vec3 finalColor = mix(color1, color2, smoothstep(0.9, 0.0, d1 + noise + ripple));
+    finalColor = mix(finalColor, color3, smoothstep(0.8, 0.0, d2 + ripple));
+    finalColor = mix(finalColor, color2 * 1.05, smoothstep(0.5, 0.0, distToMouse) * 0.25);
+    
+    // Premium editorial grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += (grain - 0.5) * 0.01;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_48 -->
+<div class="relative z-10 text-center space-y-16 reveal-up">
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl">Carry the Future.</h2>
+<div class="relative w-72 md:w-96 mx-auto">
+<img class="w-full h-auto drop-shadow-[0_50px_80px_rgba(0,0,0,0.1)] hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida/AP1WRLtyMT_rrY6HNLWu6l0_UjrN1FpuqcQxLHFt6P7TxIyzW_cxBr3V9Pe8RUpyFz4ubJIJMyHk0pbp-t7POpsS0mvGcgDDTyFNH3vVIHkvN7kWZ9E_95_0-ARN1mIA3n-B9ukyf8kR-5NBZ_cj3eI-CSYrvBDOg4ece-Qx0yU3MEe6EQ8mNtHMXnfzs5vs6JaY5MegTZwIRsTWY3sD6ses1kl2J_nJh3KvTyliA9sP7X7cumJQp9tYiwVoNJw"/>
+</div>
+<a class="inline-block bg-primary text-on-primary px-16 py-6 rounded-full font-label-sm uppercase tracking-widest hover:scale-105 hover:shadow-2xl transition-all duration-300" href="#">Explore Collection</a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-primary flex flex-col w-full px-margin-mobile md:px-margin-desktop py-40 gap-32 relative w-full overflow-hidden">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
+<div class="font-display-xl text-primary dark:text-on-primary font-bold leading-none tracking-tighter uppercase">AURA</div>
+<div class="flex gap-12 font-label-sm uppercase tracking-widest text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="hover:text-primary transition-colors" href="#">Press</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-20 border-t border-primary/5 dark:border-on-primary/10">
+<p class="font-label-sm text-on-surface-variant">© 2024 AURA LIQUID PURITY. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8 mt-8 md:mt-0">
+<span class="material-symbols-outlined cursor-pointer hover:scale-125 transition-transform">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-125 transition-transform">language</span>
+</div>
+</div>
+</footer>
+<script>
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('scale-[2.5]', 'bg-primary/5'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('scale-[2.5]', 'bg-primary/5'));
+        });
+
+        // Hero Bottle Rotation
+        const heroBottle = document.getElementById('hero-bottle');
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            heroBottle.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reveal Animations on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        // Magnetic Hover Effect
+        document.querySelectorAll('.magnetic-hover').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px)`;
+            });
+        });
+    </script>
+</body></html>
